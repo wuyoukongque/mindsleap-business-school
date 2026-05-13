@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>MindsLeap Business School · Foundation 第6课</title>
+  <link rel="stylesheet" href="./assets/css/lesson-shell.css" />
+</head>
+<body>
+  <div id="lessonApp"></div>
+  <script src="./assets/js/auth-flow.js"></script>
+  <script src="./assets/config/config-registry.js"></script>
+  <script src="./assets/js/lesson-shell.js"></script>
+  <script src="./assets/js/lesson-runtime.js"></script>
+  <script src="./assets/config/lesson-ai-foundation-06.js"></script>
+  <script>
+    const entryMode = new URLSearchParams(window.location.search).get('entry') || 'sequence';
+    const config = { ...window.MindsLeapConfigs.lessons.aiFoundation06, entryMode };
+    window.MindsLeapLessonShell.renderLessonShell(config);
+    window.MindsLeapLessonRuntime.initLessonPage(config);
+  </script>
+</body>
+</html>

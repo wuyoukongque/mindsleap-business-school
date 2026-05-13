@@ -1,0 +1,47 @@
+[
+  {
+    "file": "ai-foundation-ep04/slide_01_title.png",
+    "label": "标题页",
+    "caption": "这一节的重点，是把 AI 的成本、速度与规模逻辑真正算清楚。"
+  },
+  {
+    "file": "ai-foundation-ep04/slide_02_cost_types.png",
+    "label": "两种成本",
+    "caption": "先分清训练成本和使用成本，管理者真正该算的是后者。"
+  },
+  {
+    "file": "ai-foundation-ep04/slide_03_token_pricing.png",
+    "label": "Token计费",
+    "caption": "按 Token 计费看起来抽象，但换成人话后，你会发现单次成本可能低得惊人。"
+  },
+  {
+    "file": "ai-foundation-ep04/slide_04_marginal_cost.png",
+    "label": "边际成本",
+    "caption": "AI 的边际成本趋近于零，这才是它真正重写商业经济学的地方。"
+  },
+  {
+    "file": "ai-foundation-ep04/slide_05_scale_value.png",
+    "label": "规模价值",
+    "caption": "真正的 ROI，不只是一件事省多少钱，而是以前做不到的规模化现在能做了。"
+  },
+  {
+    "file": "ai-foundation-ep04/slide_06_api_vs_self_hosted.png",
+    "label": "API还是自建",
+    "caption": "大多数企业先用 API 验证价值，再决定要不要把投入做重。"
+  },
+  {
+    "file": "ai-foundation-ep04/slide_07_cost_trend.png",
+    "label": "成本趋势",
+    "caption": "AI 会越来越便宜，所以很多今天不划算的场景，明年可能就划算了。"
+  },
+  {
+    "file": "ai-foundation-ep04/slide_08_roi.png",
+    "label": "ROI清单",
+    "caption": "真正要算的，是投入、收益、学习成本和流程改造带来的综合回报。"
+  },
+  {
+    "file": "ai-foundation-ep04/slide_09_summary.png",
+    "label": "总结页",
+    "caption": "最终目标不是省一点钱，而是用 AI 建立更快、更轻、更可规模化的经营系统。"
+  }
+]

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>带着问题开始</title>
+  <style>
+    :root{--blue:#1E477C;--red:#9C113B;--text:#12263F;--muted:#667A96;--border:#DCE6F0;--soft:#EEF4FA;--shadow:0 14px 34px rgba(18,38,63,.08)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#F8FBFE 0%,#EEF4F8 100%);color:var(--text)}
+    .wrap{width:min(900px,100%);margin:0 auto;padding:20px 16px 40px}
+    .page-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .back{color:var(--blue);text-decoration:none;font-weight:800;font-size:13px}
+    .panel{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+    .panel-head{padding:22px 22px 0}
+    .brand{display:flex;align-items:center;gap:6px}
+    .brand-logo{display:block;height:26px;width:auto;object-fit:contain}
+    .brand-text{font-size:16px;font-weight:800;color:#1E477C;letter-spacing:0;line-height:1;font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;display:inline-flex;align-items:center;transform:translateY(1px)}
+    h1{margin:12px 0 10px;color:var(--blue);font-size:32px;line-height:1.2}
+    .lead{color:var(--muted);line-height:1.8;font-size:15px}
+    .chat{padding:18px 18px 0;display:grid;gap:14px}
+    .msg{display:flex;gap:10px;align-items:flex-start}
+    .msg.agent .bubble{background:#F7FAFE;border:1px solid #E7EEF5}
+    .msg.user{justify-content:flex-end}
+    .msg.user .bubble{background:linear-gradient(180deg,#17345D 0%,#10213A 100%);color:#EEF4FF;border:1px solid #26456F}
+    .avatar{width:34px;height:34px;border-radius:999px;background:#fff;border:1px solid #DCE6F0;display:flex;align-items:center;justify-content:center;flex:0 0 auto;overflow:hidden}
+    .avatar img{width:22px;height:22px;object-fit:contain;display:block}
+    .bubble{max-width:min(680px,88%);padding:14px 16px;border-radius:18px;line-height:1.8;font-size:14px;color:var(--text)}
+    .bubble strong{color:var(--blue)}
+    .msg.user .bubble strong{color:#fff}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .chip{border:1px solid var(--border);background:#fff;color:var(--blue);border-radius:999px;padding:9px 12px;font-size:12px;font-weight:800;cursor:pointer}
+    .chip.active{background:var(--red);color:#fff;border-color:var(--red)}
+    .composer-wrap{padding:18px}
+    .composer{display:grid;gap:10px;padding:14px;border-radius:20px;background:#FBFDFF;border:1px solid var(--border)}
+    .composer-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .composer-top strong{color:var(--blue);font-size:14px}
+    .hint{font-size:12px;color:var(--muted)}
+    textarea{width:100%;min-height:86px;border-radius:14px;border:1px solid var(--border);padding:12px 14px;font:inherit;resize:vertical;background:#fff;color:var(--text)}
+    textarea::placeholder{color:#8BA0B8}
+    .actions{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+    .ghost{font-size:12px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:14px;text-decoration:none;font-weight:800;font-size:14px;border:0;cursor:pointer}
+    .primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(18,38,63,.14)}
+    .secondary{background:#fff;color:var(--blue);border:1px solid var(--border)}
+    .recommend{display:none;margin:0 18px 18px;padding:18px;border-radius:22px;background:linear-gradient(180deg,#17345D 0%,#10213A 100%);color:#EEF4FF}
+    .recommend.show{display:block}
+    .recommend h3{margin:0 0 8px;font-size:20px}
+    .recommend p{margin:0;color:#C9D5E8;line-height:1.8;font-size:14px}
+    .meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;color:#D9E3F2;font-size:12px}
+    .path{display:grid;gap:10px;margin-top:16px}
+    .step{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .step-link{display:block;text-decoration:none;color:inherit}
+    .step strong{display:block;font-size:14px}.step span{display:block;margin-top:4px;font-size:12px;color:#C7D4E7;line-height:1.6}
+    .helper{margin:12px 18px 18px;padding:12px 14px;border-radius:16px;background:#F8FBFE;border:1px solid #E7EEF5;color:#536984;font-size:13px;line-height:1.7}
+    @media(max-width:760px){.panel-head{padding:18px 18px 0} .chat{padding:16px 16px 0} .composer-wrap{padding:16px} h1{font-size:28px} .bubble{max-width:100%}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-top">
+      <div class="brand"><img class="brand-logo" src="./assets/img/MindsLeap-Logo-blue-260322.png" alt="MindsLeap" /><span class="brand-text">商学院</span></div>
+      <a class="back" href="./index.html">← 返回首页</a>
+    </div>
+    <div class="panel">
+      <div class="panel-head">
+        <h1>带着问题开始</h1>
+        <div class="lead">不用先做复杂测评。像和智能体对话一样，先说说你现在的处境与问题，我们会据此给你一个可以立刻开始的学习旅程。</div>
+      </div>
+
+      <div class="chat" id="chatThread">
+        <div class="msg agent">
+          <div class="avatar"><img src="./assets/img/Mindsleap-favicon.png" alt="MindsLeap" /></div>
+          <div class="bubble">
+            你好，我先快速了解一下你现在最想优先解决的问题。你可以直接用自己的话输入，也可以点下面这些常见方向。
+            <div class="chips" id="topicChips">
+              <button class="chip" data-value="战略与方向">战略与方向</button>
+              <button class="chip" data-value="营销与增长">营销与增长</button>
+              <button class="chip" data-value="领导力与管理">领导力与管理</button>
+              <button class="chip" data-value="财务与经营分析">财务与经营分析</button>
+              <button class="chip" data-value="商业模式与创新">商业模式与创新</button>
+              <button class="chip" data-value="投融资与资本">投融资与资本</button>
+              <button class="chip" data-value="AI 应用与转型">AI 应用与转型</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer-wrap">
+        <div class="composer">
+          <div class="composer-top">
+            <strong id="composerTitle">第 1 步：说说你现在最想解决什么</strong>
+            <span class="hint" id="composerHint">1/2 · 建议 1-3 句话就够</span>
+          </div>
+          <textarea id="userInput" placeholder="例如：我们公司今年增长变慢了，也在考虑怎么真正把 AI 用进业务里，但现在方向有点散。"></textarea>
+          <div class="actions">
+            <div class="ghost" id="ghostText">先把问题说出来，不需要一开始就很完整。</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button class="btn secondary" id="skipBtn" type="button">跳过这一步</button>
+              <button class="btn primary" id="sendBtn" type="button">发送并继续</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="helper">我们会先给你一个足够轻的起点。更深入的理解，会在后续课程、思考卡与企业家访谈里逐步建立。</div>
+
+      <div class="recommend" id="recommendCard">
+        <h3>为你生成的学习起点</h3>
+        <p id="recommendDomain" style="margin:10px 0 0;color:#fff;font-size:14px;line-height:1.8;">你的核心问题：营销与增长 · 当前先解决：增长投入与规模化逻辑</p>
+        <p id="recommendReason">基于你当前更关注战略与方向，以及 AI 应用与转型，建议你先从<strong>企业战略</strong>开始，先建立经营判断框架，再进入更具体的增长与 AI 模块。</p>
+        <div class="meta">
+          <span id="metaReason">推荐理由：先把方向理清，再决定资源如何投入</span>
+          <span id="metaStage">当前状态：增长期 / 需要先收拢主线</span>
+          <span id="metaDuration">第一轮学习：约 30 分钟</span>
+        </div>
+        <div class="path">
+          <div class="step"><strong>第 1 步 · AI时代，什么是战略？</strong><span>先建立方向、取舍与优先级的核心框架。</span></div>
+          <div class="step"><strong>第 2 步 · 战略的本质：哪些不变，哪些被重构</strong><span>把经典战略框架放回 AI 时代重新理解。</span></div>
+          <div class="step"><strong>第 3 步 · 生成一页纸思考卡</strong><span>把课程内容映射回你的企业问题，获得第一轮清晰感。</span></div>
+        </div>
+        <div class="actions" style="margin-top:18px;justify-content:flex-start;">
+          <a class="btn primary" id="startRecommendedBtn" href="./lesson-strategy-01.html?entry=problem">开始第一节课</a>
+          <a class="btn secondary" id="viewFullMapBtn" href="./map.html?entry=sequence">我想看完整课程</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/auth-flow.js"></script>
+  <script>
+    const { readStorage, writeStorage, StorageKeys } = window.MindsLeapAuthFlow;
+    const thread = document.getElementById('chatThread');
+    const userInput = document.getElementById('userInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const skipBtn = document.getElementById('skipBtn');
+    const composerTitle = document.getElementById('composerTitle');
+    const composerHint = document.getElementById('composerHint');
+    const ghostText = document.getElementById('ghostText');
+    const recommendCard = document.getElementById('recommendCard');
+    const recommendReason = document.getElementById('recommendReason');
+    const recommendDomain = document.getElementById('recommendDomain');
+    const metaReason = document.getElementById('metaReason');
+    const metaStage = document.getElementById('metaStage');
+    const startRecommendedBtn = document.getElementById('startRecommendedBtn');
+    const viewFullMapBtn = document.getElementById('viewFullMapBtn');
+    const metaDuration = document.getElementById('metaDuration');
+    const topicChips = [...document.querySelectorAll('#topicChips .chip')];
+
+    let step = 1;
+    const API_BASE = window.location.port === '8013' ? '' : 'http://127.0.0.1:8013';
+    const state = {
+      topics: [],
+      problem: '',
+      stage: '',
+    };
+
+    function escapeHtml(text) {
+      return String(text || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function appendMessage(role, html) {
+      const msg = document.createElement('div');
+      msg.className = `msg ${role}`;
+      msg.innerHTML = role === 'agent'
+        ? `<div class="avatar"><img src="./assets/img/Mindsleap-favicon.png" alt="MindsLeap" /></div><div class="bubble">${html}</div>`
+        : `<div class="bubble">${html}</div>`;
+      thread.appendChild(msg);
+      thread.scrollTop = thread.scrollHeight;
+    }
+
+    function inferTopics(text) {
+      const rules = [
+        ['战略与方向', ['战略', '方向', '定位', '取舍']],
+        ['营销与增长', ['增长', '获客', '转化', '流量', '营销']],
+        ['领导力与管理', ['团队', '管理', '领导力', '协作']],
+        ['财务与经营分析', ['财务', '现金流', '利润', '经营']],
+        ['商业模式与创新', ['商业模式', '创新', '第二曲线', '产品']],
+        ['投融资与资本', ['融资', '资本', '估值', '投资']],
+        ['AI 应用与转型', ['AI', '智能体', '转型', '自动化', '数字员工']]
+      ];
+      const found = [];
+      rules.forEach(([name, keys]) => {
+        if (keys.some(k => text.includes(k))) found.push(name);
+      });
+      return found;
+    }
+
+    function inferStage(text) {
+      if (text.includes('转型') || text.includes('调整')) return '调整期';
+      if (text.includes('成熟')) return '成熟期';
+      if (text.includes('刚开始') || text.includes('初创')) return '初创期';
+      return '增长期';
+    }
+
+    async function requestRecommendation() {
+      const resp = await fetch(`${API_BASE}/api/problem-start`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          problem: state.problem,
+          stage: state.stage,
+          topics: state.topics
+        })
+      });
+      if (!resp.ok) throw new Error(`request failed: ${resp.status}`);
+      const json = await resp.json();
+      return json.data;
+    }
+
+    function renderRecommendation(result) {
+      const topicText = state.topics.length ? state.topics.join('、') : '战略与方向';
+      const reason = result?.reason || '你现在的问题更适合先建立一条清晰主线，再展开细分模块。';
+      const stageLabel = result?.stage_label || `${state.stage || '增长期'} / 需要先获得更清楚的经营判断框架`;
+      const steps = result?.steps || [];
+      const summary = result?.summary || `基于你当前提到的${topicText}，建议你先从一个系统化模块开始。`;
+      const firstStep = steps[0] || {};
+      const targetDomain = result?.target_domain || topicText;
+      const currentFocus = result?.current_focus || summary;
+      const bridgeReason = result?.bridge_reason || reason;
+
+      recommendDomain.textContent = `你的核心问题：${targetDomain} · 当前先解决：${currentFocus}`;
+      recommendReason.innerHTML = `${escapeHtml(summary)}`;
+      metaReason.textContent = `为什么先上这节：${bridgeReason}`;
+      metaStage.textContent = `当前状态：${stageLabel}`;
+      metaDuration.textContent = `第一轮学习：${steps.length ? `${steps.length * 10}-${steps.length * 15} 分钟` : '约 30 分钟'}`;
+      startRecommendedBtn.href = result?.start_url || firstStep.url || './lesson-strategy-01.html?entry=problem';
+      startRecommendedBtn.textContent = `开始：${firstStep.title || '第一节课'}`;
+      viewFullMapBtn.href = result?.full_map_url || './map.html?entry=sequence';
+
+      const pathRoot = recommendCard.querySelector('.path');
+      pathRoot.innerHTML = steps.map(step => {
+        const inner = `<strong>${escapeHtml(step.title)}</strong><span>${escapeHtml(step.body)}</span>`;
+        return step.url
+          ? `<a class="step step-link" href="${escapeHtml(step.url)}">${inner}</a>`
+          : `<div class="step">${inner}</div>`;
+      }).join('');
+      recommendCard.classList.add('show');
+      writeStorage(StorageKeys.guestPath, {
+        path_type: 'problem_driven_ai',
+        title: result?.path_title || 'AI 推荐学习路径',
+        goal: summary,
+        recommended_modules: [result?.track_id || 'strategy'],
+        recommended_lessons: steps.map(step => step.lesson_id).filter(Boolean),
+        steps,
+        reason,
+        target_domain: targetDomain,
+        current_focus: currentFocus,
+        bridge_reason: bridgeReason,
+        stage_label: stageLabel,
+        first_lesson_url: result?.start_url || firstStep.url || './lesson-strategy-01.html?entry=problem',
+        first_lesson_id: result?.start_lesson_id || firstStep.lesson_id || ((result?.track_id || 'strategy') === 'ai-foundation' ? 'ai-foundation-01' : 'strategy-01'),
+        full_map_url: result?.full_map_url || './map.html?entry=sequence',
+        updated_at: Date.now()
+      });
+    }
+
+    function goStep2() {
+      step = 2;
+      composerTitle.textContent = '第 2 步：再说说你企业现在更接近什么状态';
+      composerHint.textContent = '2/2 · 1 句话就够';
+      ghostText.textContent = '例如：我们在增长期，但最近开始感觉方向有点散。';
+      userInput.value = '';
+      userInput.placeholder = '例如：我们现在大概在增长期，业务还在扩，但资源开始不够集中。';
+      appendMessage('agent', `我大概理解了。你现在更在意的是<strong>${state.topics.join('、') || '战略与方向'}</strong>。<br/><br/>最后再告诉我一句：你的企业现在更接近初创期、增长期、成熟期，还是调整期？也可以直接用自己的话说。`);
+    }
+
+    async function finishFlow() {
+      appendMessage('agent', '收到，我先基于你刚刚给的信息，给你一个可以立刻开始的学习起点。');
+      composerTitle.textContent = '正在生成推荐路径...';
+      composerHint.textContent = '请稍等几秒';
+      ghostText.textContent = 'AI 正在结合你的问题和当前阶段，给出一个可立即开始的学习建议。';
+      sendBtn.disabled = true;
+      skipBtn.disabled = true;
+
+      let result;
+      try {
+        result = await requestRecommendation();
+      } catch (e) {
+        result = {
+          summary: '建议你先从企业战略开始，先把经营主线、资源取舍和优先级理清。',
+          reason: '当前网络或服务暂时不可用，先用默认策略推荐给你一个可立即开始的起点。',
+          stage_label: `${state.stage || '增长期'} / 先建立清晰主线`,
+          track_id: 'strategy',
+          start_url: './lesson-strategy-01.html?entry=problem',
+          full_map_url: './map.html?entry=sequence',
+          steps: [
+            { title: '第 1 步 · AI时代，什么是战略？', body: '先建立方向、取舍与优先级的核心框架。' },
+            { title: '第 2 步 · 战略的本质', body: '把经典战略框架放回 AI 时代重新理解。' },
+            { title: '第 3 步 · 一页纸思考卡', body: '把课程内容映射回你的企业现实。' }
+          ]
+        };
+      }
+
+      renderRecommendation(result);
+      writeStorage(StorageKeys.guestIntake, {
+        entry_mode: 'problem',
+        raw_problem_input: state.problem,
+        selected_topics: state.topics,
+        company_stage: state.stage,
+        updated_at: Date.now()
+      });
+      localStorage.setItem('mindsleap_problem_start', JSON.stringify(state));
+      composerTitle.textContent = '已完成初步分析';
+      composerHint.textContent = '你可以直接开始第一节课';
+      ghostText.textContent = '后面系统会在学习过程中继续了解你，再逐步补充个性化路径。';
+      userInput.disabled = true;
+      sendBtn.disabled = true;
+      sendBtn.style.opacity = .5;
+      skipBtn.style.display = 'none';
+    }
+
+    topicChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const value = chip.dataset.value;
+        chip.classList.toggle('active');
+        state.topics = topicChips.filter(x => x.classList.contains('active')).map(x => x.dataset.value);
+        if (!userInput.value.trim()) {
+          userInput.value = state.topics.join('、');
+        }
+      });
+    });
+
+    sendBtn.addEventListener('click', () => {
+      const value = userInput.value.trim();
+      if (step === 1) {
+        state.problem = value;
+        const inferred = inferTopics(value);
+        state.topics = Array.from(new Set([...(state.topics || []), ...inferred])).slice(0, 3);
+        appendMessage('user', value || '我先从系统推荐开始。');
+        goStep2();
+      } else {
+        state.stage = inferStage(value || '');
+        appendMessage('user', value || state.stage);
+        finishFlow();
+      }
+    });
+
+    skipBtn.addEventListener('click', () => {
+      if (step === 1) {
+        appendMessage('user', '我想先直接给我一个起点。');
+        state.topics = state.topics.length ? state.topics : ['战略与方向'];
+        goStep2();
+      } else {
+        state.stage = '增长期';
+        appendMessage('user', '先按默认理解就好。');
+        finishFlow();
+      }
+    });
+
+    startRecommendedBtn.addEventListener('click', () => {
+      const path = readStorage(StorageKeys.guestPath, {});
+      const moduleId = (path.recommended_modules && path.recommended_modules[0]) || 'strategy';
+      const firstLessonUrl = path.first_lesson_url || './lesson-strategy-01.html?entry=problem';
+      const firstLessonId = path.first_lesson_id || (firstLessonUrl.includes('ai-foundation') ? 'ai-foundation-01' : 'strategy-01');
+      writeStorage(StorageKeys.guestProgress, {
+        entry_mode: 'problem',
+        current_module: moduleId,
+        current_lesson: firstLessonId,
+        last_position_sec: 0,
+        visited_lessons: [firstLessonId],
+        updated_at: Date.now()
+      });
+    });
+
+    viewFullMapBtn.addEventListener('click', () => {
+      const prev = readStorage(StorageKeys.guestProgress, {});
+      writeStorage(StorageKeys.guestProgress, {
+        ...prev,
+        entry_mode: 'problem',
+        updated_at: Date.now()
+      });
+    });
+
+    (function restoreGuestState() {
+      const intake = readStorage(StorageKeys.guestIntake);
+      const path = readStorage(StorageKeys.guestPath);
+      if (!intake) return;
+      state.problem = intake.raw_problem_input || '';
+      state.topics = intake.selected_topics || [];
+      state.stage = intake.company_stage || '';
+      state.topics.forEach(topic => {
+        const chip = topicChips.find(x => x.dataset.value === topic);
+        if (chip) chip.classList.add('active');
+      });
+      if (!userInput.value) userInput.value = state.problem;
+      if (path) {
+        renderRecommendation({
+          summary: path.goal || '',
+          reason: path.reason || '',
+          target_domain: path.target_domain || (state.topics[0] || ''),
+          current_focus: path.current_focus || path.goal || '',
+          bridge_reason: path.bridge_reason || path.reason || '',
+          stage_label: state.stage || '',
+          track_id: (path.recommended_modules && path.recommended_modules[0]) || 'strategy',
+          start_url: path.first_lesson_url || './lesson-strategy-01.html?entry=problem',
+          full_map_url: path.full_map_url || './map.html?entry=sequence',
+          start_lesson_id: path.first_lesson_id || ((path.recommended_modules && path.recommended_modules[0]) || 'strategy-01'),
+          steps: path.steps || [
+            { title: '第 1 步 · 从推荐课程开始', body: '先获得第一轮结构化理解。', url: path.first_lesson_url || './lesson-strategy-01.html?entry=problem' },
+            { title: '第 2 步 · 继续学习下一个关键模块', body: '把问题放回系统化框架中。' },
+            { title: '第 3 步 · 生成思考卡并继续追问', body: '把内容真正映射回企业经营。' }
+          ]
+        });
+        composerTitle.textContent = '已恢复你上次的问题输入';
+        composerHint.textContent = '你可以继续修改，也可以直接开始学习';
+        ghostText.textContent = '系统已经恢复了你上一次的问题与推荐起点。';
+      }
+    })();
+  </script>
+</body>
+</html>

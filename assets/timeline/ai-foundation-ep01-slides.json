@@ -1,0 +1,12 @@
+[
+  {"file":"ai-foundation-ep01/slide_01_title.png","label":"标题页","caption":"这节课先帮你建立一个管理者理解 AI 的底层框架。"},
+  {"file":"ai-foundation-ep01/slide_02_why_first.png","label":"为什么先学这节","caption":"如果不先搞清楚 AI 是什么，后面的战略、增长和组织讨论都会漂起来。"},
+  {"file":"ai-foundation-ep01/slide_03_definition.png","label":"定义","caption":"先用管理者能理解的话把 AI 说明白，而不是一上来陷入技术名词。"},
+  {"file":"ai-foundation-ep01/slide_04_super_intern.png","label":"超级实习生","caption":"你可以先把 AI 理解成一个速度极快、知识很广，但也会犯错的超级实习生。"},
+  {"file":"ai-foundation-ep01/slide_05_strengths.png","label":"擅长什么","caption":"AI 特别擅长处理信息密集、可表达、可拆解的工作。"},
+  {"file":"ai-foundation-ep01/slide_06_limits.png","label":"不擅长什么","caption":"AI 不擅长承担价值判断，也不能替你完成最终取舍。"},
+  {"file":"ai-foundation-ep01/slide_07_application_layers.png","label":"应用层次","caption":"自动化、增强、创造，是最适合管理者理解 AI 商业价值的三层框架。"},
+  {"file":"ai-foundation-ep01/slide_08_manager_levels.png","label":"管理者层次","caption":"真正重要的不是追工具，而是开始用管理者视角重构业务分工。"},
+  {"file":"ai-foundation-ep01/slide_09_digital_workers.png","label":"数字员工","caption":"未来你要管理的不只是人，也包括越来越多的数字员工。"},
+  {"file":"ai-foundation-ep01/slide_10_summary.png","label":"总结页","caption":"这节课的目的，是让你第一次用结构化方式理解 AI，而不是只凭感觉。"}
+]

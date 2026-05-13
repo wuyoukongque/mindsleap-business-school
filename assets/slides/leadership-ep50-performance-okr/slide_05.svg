@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<line x1="96" y1="90" x2="1504" y2="90" stroke="#DCE6F0" stroke-width="2"/>
+<line x1="96" y1="810" x2="1504" y2="810" stroke="#DCE6F0" stroke-width="2"/>
+<rect x="640" y="128" width="320" height="50" rx="25" fill="#9C113B"/>
+<text x="800" y="161" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">第 3 课 · AI时代领导力</text>
+<text x="800" y="240" text-anchor="middle" font-size="54" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">KPI 和 OKR 怎么配合</text>
+<rect x="165" y="380" width="1270" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="211" cy="427.0" r="24" fill="#9C113B"/>
+<text x="211" y="435.0" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text>
+<text x="257" y="407.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">不要把它们理解成二选一。很多组织更适合公司和团队层面用 OKR，对</text>
+<text x="257" y="445.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">齐方向；个人和执行层面用 KPI，守住基本盘</text>
+<rect x="165" y="488" width="1270" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="211" cy="535.0" r="24" fill="#9C113B"/>
+<text x="211" y="543.0" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text>
+<text x="257" y="515.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">简单说，OKR 负责拉高目标，KPI 负责保证底线，两者一起用比单独用</text>
+<text x="257" y="553.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">更稳</text>
+<rect x="165" y="596" width="1270" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="211" cy="643.0" r="24" fill="#9C113B"/>
+<text x="211" y="651.0" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text>
+<text x="257" y="623.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">真正重要的不是工具名字，而是你在考核什么，是只看动作，还是在看目</text>
+<text x="257" y="661.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">标和结果</text>
+</svg>

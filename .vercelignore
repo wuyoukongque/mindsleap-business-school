@@ -1,0 +1,15 @@
+.env*
+.DS_Store
+__pycache__/
+*.py
+*.md
+tmp_audio/
+episodes/
+brand/
+content/
+docs/
+scripts/
+themes/
+deck-template/
+deck-ep01/
+LESSON_PAGE_STANDARD.md

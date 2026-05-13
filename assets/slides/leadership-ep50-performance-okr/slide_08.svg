@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<line x1="96" y1="90" x2="1504" y2="90" stroke="#DCE6F0" stroke-width="2"/>
+<line x1="96" y1="810" x2="1504" y2="810" stroke="#DCE6F0" stroke-width="2"/>
+<rect x="640" y="128" width="320" height="50" rx="25" fill="#9C113B"/>
+<text x="800" y="161" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">第 3 课 · AI时代领导力</text>
+<text x="800" y="240" text-anchor="middle" font-size="54" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">学员最需要带走的 3 个知识点</text>
+<rect x="170" y="410" width="1260" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="216" cy="457" r="24" fill="#9C113B"/>
+<text x="216" y="465" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text>
+<text x="262" y="434" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">KPI 更适合稳定执行型工作，OKR 更适合创新与协同型工作，两者不</text>
+<text x="262" y="474" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">必对立</text>
+<rect x="170" y="518" width="1260" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="216" cy="565" r="24" fill="#9C113B"/>
+<text x="216" y="573" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text>
+<text x="262" y="552" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">AI 时代绩效管理要从工作量导向，转向价值产出导向</text>
+<rect x="170" y="626" width="1260" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="216" cy="673" r="24" fill="#9C113B"/>
+<text x="216" y="681" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text>
+<text x="262" y="650" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">绩效管理真正有效的关键，不是年终打分，而是持续反馈、及时校准和</text>
+<text x="262" y="690" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">成长引导</text>
+</svg>

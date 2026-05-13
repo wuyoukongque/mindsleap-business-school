@@ -1,0 +1,1355 @@
+{
+  "source_root": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content",
+  "ignored_source_files": [
+    "module-01-strategy/ep01-what-is-strategy.md"
+  ],
+  "module_count": 11,
+  "lesson_count": 120,
+  "modules": [
+    {
+      "module_slug": "module-00-ai-foundation",
+      "module_order": 0,
+      "module_header": "模块零：AI 认知启蒙 · 第 1 期",
+      "module_title": "AI时代商业认知",
+      "lesson_count": 6,
+      "episode_range": {
+        "from": 1,
+        "to": 6
+      },
+      "first_lesson_id": "ep01-what-is-ai",
+      "first_lesson_title": "AI 到底是什么？管理者的第一课"
+    },
+    {
+      "module_slug": "module-01-strategy",
+      "module_order": 1,
+      "module_header": "第一模块：战略管理 · 第 1 期",
+      "module_title": "企业战略",
+      "lesson_count": 14,
+      "episode_range": {
+        "from": 7,
+        "to": 20
+      },
+      "first_lesson_id": "ep07-what-is-strategy",
+      "first_lesson_title": "什么是战略？为什么大多数公司其实没有战略"
+    },
+    {
+      "module_slug": "module-02-finance",
+      "module_order": 2,
+      "module_header": "模块二：财务与金融 · 第 21 期",
+      "module_title": "财务与经营分析",
+      "lesson_count": 13,
+      "episode_range": {
+        "from": 21,
+        "to": 33
+      },
+      "first_lesson_id": "ep21-financial-statements",
+      "first_lesson_title": "三张财务报表：企业的体检报告"
+    },
+    {
+      "module_slug": "module-03-marketing",
+      "module_order": 3,
+      "module_header": "模块三：市场营销 · 第 34 期",
+      "module_title": "营销与增长",
+      "lesson_count": 14,
+      "episode_range": {
+        "from": 34,
+        "to": 47
+      },
+      "first_lesson_id": "ep34-stp",
+      "first_lesson_title": "STP：找到你的市场在哪里"
+    },
+    {
+      "module_slug": "module-04-leadership",
+      "module_order": 4,
+      "module_header": "模块四：组织与领导力 · 第 48 期",
+      "module_title": "AI时代领导力",
+      "lesson_count": 14,
+      "episode_range": {
+        "from": 48,
+        "to": 61
+      },
+      "first_lesson_id": "ep48-hiring-ai-era",
+      "first_lesson_title": "招人的艺术：AI 时代需要什么样的人才"
+    },
+    {
+      "module_slug": "module-05-operations",
+      "module_order": 5,
+      "module_header": "模块五：运营管理 · 第 62 期",
+      "module_title": "运营与流程优化",
+      "lesson_count": 12,
+      "episode_range": {
+        "from": 62,
+        "to": 73
+      },
+      "first_lesson_id": "ep62-operations-thinking",
+      "first_lesson_title": "运营思维：用系统的方式做事情"
+    },
+    {
+      "module_slug": "module-06-innovation",
+      "module_order": 6,
+      "module_header": "模块六：创新与创业 · 第 74 期",
+      "module_title": "创新与商业模式",
+      "lesson_count": 12,
+      "episode_range": {
+        "from": 74,
+        "to": 85
+      },
+      "first_lesson_id": "ep74-disruptive-innovation",
+      "first_lesson_title": "颠覆式创新：AI 如何加速颠覆周期"
+    },
+    {
+      "module_slug": "module-07-data",
+      "module_order": 7,
+      "module_header": "模块七：商业数据与分析 · 第 86 期",
+      "module_title": "数据驱动经营",
+      "lesson_count": 11,
+      "episode_range": {
+        "from": 86,
+        "to": 96
+      },
+      "first_lesson_id": "ep86-data-driven-decision",
+      "first_lesson_title": "数据驱动决策：从拍脑袋到用数据说话"
+    },
+    {
+      "module_slug": "module-08-legal",
+      "module_order": 8,
+      "module_header": "模块八：商业法律与合规 · 第 97 期",
+      "module_title": "法律、合规与风险",
+      "lesson_count": 10,
+      "episode_range": {
+        "from": 97,
+        "to": 106
+      },
+      "first_lesson_id": "ep97-company-law",
+      "first_lesson_title": "公司法基础：企业设立与法人治理"
+    },
+    {
+      "module_slug": "module-09-workshop",
+      "module_order": 9,
+      "module_header": "模块九：AI 实战工作坊 · 第 107 期",
+      "module_title": "AI实战工作坊",
+      "lesson_count": 8,
+      "episode_range": {
+        "from": 107,
+        "to": 114
+      },
+      "first_lesson_id": "ep107-ai-tool-landscape",
+      "first_lesson_title": "AI 工具全景图：管理者必备工具栈"
+    },
+    {
+      "module_slug": "module-10-capstone",
+      "module_order": 10,
+      "module_header": "模块十：综合实战与毕业项目 · 第 115 期",
+      "module_title": "综合实战与毕业项目",
+      "lesson_count": 6,
+      "episode_range": {
+        "from": 115,
+        "to": 120
+      },
+      "first_lesson_id": "ep115-full-analysis",
+      "first_lesson_title": "商业分析全流程：从行业研究到战略建议"
+    }
+  ],
+  "lessons": [
+    {
+      "lesson_id": "ep01-what-is-ai",
+      "episode_no": 1,
+      "title": "AI 到底是什么？管理者的第一课",
+      "module_slug": "module-00-ai-foundation",
+      "module_title": "AI时代商业认知",
+      "module_order": 0,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-00-ai-foundation/ep01-what-is-ai.md",
+      "duration_hint": "15 分钟"
+    },
+    {
+      "lesson_id": "ep02-large-models",
+      "episode_no": 2,
+      "title": "大模型改变了什么？从 GPT 到 Agent 的进化",
+      "module_slug": "module-00-ai-foundation",
+      "module_title": "AI时代商业认知",
+      "module_order": 0,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-00-ai-foundation/ep02-large-models.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep03-ai-can-and-cannot",
+      "episode_no": 3,
+      "title": "AI 能做什么，不能做什么：管理者的判断框架",
+      "module_slug": "module-00-ai-foundation",
+      "module_title": "AI时代商业认知",
+      "module_order": 0,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-00-ai-foundation/ep03-ai-can-and-cannot.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep04-ai-economics",
+      "episode_no": 4,
+      "title": "AI 的商业经济学：成本、速度与规模",
+      "module_slug": "module-00-ai-foundation",
+      "module_title": "AI时代商业认知",
+      "module_order": 0,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-00-ai-foundation/ep04-ai-economics.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep05-prompt-thinking",
+      "episode_no": 5,
+      "title": "Prompt 思维：像产品经理一样和 AI 协作",
+      "module_slug": "module-00-ai-foundation",
+      "module_title": "AI时代商业认知",
+      "module_order": 0,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-00-ai-foundation/ep05-prompt-thinking.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep06-personal-competitiveness",
+      "episode_no": 6,
+      "title": "AI 时代的个人竞争力：你的不可替代性在哪",
+      "module_slug": "module-00-ai-foundation",
+      "module_title": "AI时代商业认知",
+      "module_order": 0,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-00-ai-foundation/ep06-personal-competitiveness.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep07-what-is-strategy",
+      "episode_no": 7,
+      "title": "什么是战略？为什么大多数公司其实没有战略",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep07-what-is-strategy.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep08-porters-five-forces",
+      "episode_no": 8,
+      "title": "波特五力模型：看懂你的行业竞争格局",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep08-porters-five-forces.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep09-competitive-advantage",
+      "episode_no": 9,
+      "title": "竞争优势的两条路：成本领先 vs 差异化",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep09-competitive-advantage.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep10-value-chain",
+      "episode_no": 10,
+      "title": "价值链分析：AI 正在重构哪些环节",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep10-value-chain.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep11-business-model-canvas",
+      "episode_no": 11,
+      "title": "商业模式画布：一张图说清怎么赚钱",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep11-business-model-canvas.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep12-platform-strategy",
+      "episode_no": 12,
+      "title": "平台战略与网络效应",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep12-platform-strategy.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep13-ai-native-business-models",
+      "episode_no": 13,
+      "title": "AI-Native 商业模式：从卖产品到卖智能",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep13-ai-native-business-models.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep14-subscription-economy",
+      "episode_no": 14,
+      "title": "订阅经济与 AI 个性化",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep14-subscription-economy.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep15-blue-ocean",
+      "episode_no": 15,
+      "title": "蓝海战略：AI 时代的新蓝海在哪里",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep15-blue-ocean.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep16-ansoff-matrix",
+      "episode_no": 16,
+      "title": "安索夫矩阵：四种增长路径怎么选",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep16-ansoff-matrix.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep17-ma-and-alliances",
+      "episode_no": 17,
+      "title": "并购与战略联盟：AI 时代的\"买 vs 建 vs 合作\"",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep17-ma-and-alliances.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep18-case-tesla",
+      "episode_no": 18,
+      "title": "案例：Tesla 的 AI 战略棋局",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep18-case-tesla.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep19-case-bytedance",
+      "episode_no": 19,
+      "title": "案例：字节跳动——算法驱动的战略机器",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep19-case-bytedance.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep20-strategy-workshop",
+      "episode_no": 20,
+      "title": "你的战略工作坊：用 AI 帮你做战略分析",
+      "module_slug": "module-01-strategy",
+      "module_title": "企业战略",
+      "module_order": 1,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-01-strategy/ep20-strategy-workshop.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep21-financial-statements",
+      "episode_no": 21,
+      "title": "三张财务报表：企业的体检报告",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep21-financial-statements.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep22-financial-ratios",
+      "episode_no": 22,
+      "title": "从报表看企业健康度：关键财务指标",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep22-financial-ratios.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep23-cash-flow",
+      "episode_no": 23,
+      "title": "现金流为王：为什么赚钱的公司也会死",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep23-cash-flow.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep24-ai-financial-analysis",
+      "episode_no": 24,
+      "title": "用 AI 做财务分析：从手动翻报表到对话式洞察",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep24-ai-financial-analysis.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep25-valuation",
+      "episode_no": 25,
+      "title": "你的公司值多少钱？估值方法论",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep25-valuation.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep26-ai-company-valuation",
+      "episode_no": 26,
+      "title": "AI 公司怎么估值：数据、模型与护城河",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep26-ai-company-valuation.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep27-financing-strategy",
+      "episode_no": 27,
+      "title": "融资策略：股权 vs 债权怎么选",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep27-financing-strategy.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep28-equity-structure",
+      "episode_no": 28,
+      "title": "股权结构设计与 Term Sheet 解读",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep28-equity-structure.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep29-investment-decision",
+      "episode_no": 29,
+      "title": "投资决策：该不该投这个项目",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep29-investment-decision.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep30-ai-financial-risk",
+      "episode_no": 30,
+      "title": "AI 驱动的财务风控：从人工审计到智能预警",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep30-ai-financial-risk.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep31-pricing",
+      "episode_no": 31,
+      "title": "定价的艺术：从成本加成到 AI 动态定价",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep31-pricing.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep32-case-nvidia",
+      "episode_no": 32,
+      "title": "案例：从财报看 Nvidia 的 AI 淘金卖水模式",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep32-case-nvidia.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep33-financial-checkup",
+      "episode_no": 33,
+      "title": "你的财务体检：用 AI 做一次快速财务诊断",
+      "module_slug": "module-02-finance",
+      "module_title": "财务与经营分析",
+      "module_order": 2,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-02-finance/ep33-financial-checkup.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep34-stp",
+      "episode_no": 34,
+      "title": "STP：找到你的市场在哪里",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep34-stp.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep35-brand-positioning",
+      "episode_no": 35,
+      "title": "品牌定位：在用户心里占一个位置",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep35-brand-positioning.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep36-marketing-mix",
+      "episode_no": 36,
+      "title": "4P 到 4C：营销组合怎么设计",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep36-marketing-mix.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep37-consumer-psychology",
+      "episode_no": 37,
+      "title": "消费者决策心理：人为什么买单",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep37-consumer-psychology.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep38-growth-flywheel",
+      "episode_no": 38,
+      "title": "增长飞轮：从 AARRR 到 AI 驱动增长",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep38-growth-flywheel.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep39-ai-content-marketing",
+      "episode_no": 39,
+      "title": "AI 内容营销：规模化创作高质量内容",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep39-ai-content-marketing.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep40-personalization",
+      "episode_no": 40,
+      "title": "个性化营销：千人千面的实现路径",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep40-personalization.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep41-marketing-automation",
+      "episode_no": 41,
+      "title": "营销自动化：让 AI Agent 帮你跑增长",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep41-marketing-automation.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep42-storytelling",
+      "episode_no": 42,
+      "title": "故事化营销：AI 时代更需要人的温度",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep42-storytelling.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep43-b2b-marketing",
+      "episode_no": 43,
+      "title": "B2B 营销：企业客户怎么打",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep43-b2b-marketing.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep44-global-marketing",
+      "episode_no": 44,
+      "title": "出海营销：AI 如何降低全球化门槛",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep44-global-marketing.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep45-case-coca-cola",
+      "episode_no": 45,
+      "title": "案例：可口可乐的 AI 营销实验",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep45-case-coca-cola.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep46-case-dtc-brand",
+      "episode_no": 46,
+      "title": "案例：一个 DTC 品牌如何用 AI 从 0 做到千万",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep46-case-dtc-brand.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep47-marketing-workshop",
+      "episode_no": 47,
+      "title": "你的营销诊断：用 AI 设计你的增长策略",
+      "module_slug": "module-03-marketing",
+      "module_title": "营销与增长",
+      "module_order": 3,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-03-marketing/ep47-marketing-workshop.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep48-hiring-ai-era",
+      "episode_no": 48,
+      "title": "招人的艺术：AI 时代需要什么样的人才",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep48-hiring-ai-era.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep49-team-motivation",
+      "episode_no": 49,
+      "title": "团队发展与激励：钱不是万能的",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep49-team-motivation.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep50-performance-okr",
+      "episode_no": 50,
+      "title": "绩效管理：OKR vs KPI，AI 时代怎么考核",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep50-performance-okr.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep51-leadership-model",
+      "episode_no": 51,
+      "title": "AI 时代的领导力模型：从管人到管人+机",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep51-leadership-model.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep52-managing-digital-workers",
+      "episode_no": 52,
+      "title": "管理你的数字员工：AI Agent 的部署与治理",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep52-managing-digital-workers.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep53-human-ai-collaboration",
+      "episode_no": 53,
+      "title": "人机协作最佳实践：谁做什么，怎么配合",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep53-human-ai-collaboration.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep54-ai-change-management",
+      "episode_no": 54,
+      "title": "AI 变革管理：如何带组织穿越转型期",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep54-ai-change-management.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep55-agile-organization",
+      "episode_no": 55,
+      "title": "组织结构选型：AI 时代的敏捷组织",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep55-agile-organization.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep56-corporate-culture",
+      "episode_no": 56,
+      "title": "企业文化：AI 时代的文化塑造",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep56-corporate-culture.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep57-remote-work",
+      "episode_no": 57,
+      "title": "远程与混合办公：AI 工具如何赋能分布式团队",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep57-remote-work.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep58-ai-decision-making",
+      "episode_no": 58,
+      "title": "高效决策：AI 辅助决策 vs 人类判断力",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep58-ai-decision-making.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep59-conflict-management",
+      "episode_no": 59,
+      "title": "冲突管理与向上管理",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep59-conflict-management.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep60-case-nadella",
+      "episode_no": 60,
+      "title": "案例：微软 CEO Nadella 如何带领 AI 转型",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep60-case-nadella.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep61-case-ai-adoption",
+      "episode_no": 61,
+      "title": "案例：一个中型企业的 AI 导入实录",
+      "module_slug": "module-04-leadership",
+      "module_title": "AI时代领导力",
+      "module_order": 4,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-04-leadership/ep61-case-ai-adoption.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep62-operations-thinking",
+      "episode_no": 62,
+      "title": "运营思维：用系统的方式做事情",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep62-operations-thinking.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep63-lean-management",
+      "episode_no": 63,
+      "title": "精益管理：消除一切浪费",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep63-lean-management.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep64-quality-management",
+      "episode_no": 64,
+      "title": "质量管理：从六西格玛到 AI 质检",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep64-quality-management.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep65-ai-supply-chain",
+      "episode_no": 65,
+      "title": "供应链管理：AI 如何让供应链变聪明",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep65-ai-supply-chain.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep66-rpa-to-agent",
+      "episode_no": 66,
+      "title": "流程自动化：从 RPA 到 AI Agent",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep66-rpa-to-agent.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep67-data-driven-ops",
+      "episode_no": 67,
+      "title": "数据化运营：用 AI 驱动每一个运营决策",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep67-data-driven-ops.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep68-agile-pm",
+      "episode_no": 68,
+      "title": "项目管理：AI 时代的敏捷实践",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep68-agile-pm.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep69-case-amazon",
+      "episode_no": 69,
+      "title": "案例：亚马逊的 AI 运营飞轮",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep69-case-amazon.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep70-case-fast-fashion",
+      "episode_no": 70,
+      "title": "案例：Zara 和 Shein 的 AI 供应链革命",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep70-case-fast-fashion.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep71-case-manufacturing",
+      "episode_no": 71,
+      "title": "案例：一家制造企业的 AI 运营升级",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep71-case-manufacturing.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep72-ops-diagnosis",
+      "episode_no": 72,
+      "title": "你的运营诊断：用 AI 找到效率瓶颈",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep72-ops-diagnosis.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep73-automation-roadmap",
+      "episode_no": 73,
+      "title": "你的自动化路线图：哪些流程该优先 AI 化",
+      "module_slug": "module-05-operations",
+      "module_title": "运营与流程优化",
+      "module_order": 5,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-05-operations/ep73-automation-roadmap.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep74-disruptive-innovation",
+      "episode_no": 74,
+      "title": "颠覆式创新：AI 如何加速颠覆周期",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep74-disruptive-innovation.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep75-design-thinking",
+      "episode_no": 75,
+      "title": "设计思维：AI 如何增强每一步",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep75-design-thinking.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep76-lean-startup",
+      "episode_no": 76,
+      "title": "精益创业：AI 时代的 MVP 更快更便宜",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep76-lean-startup.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep77-first-principles",
+      "episode_no": 77,
+      "title": "第一性原理思维：AI 时代的创新基础",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep77-first-principles.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep78-ai-native-startup",
+      "episode_no": 78,
+      "title": "AI 原生创业：从第一天就用 AI 构建",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep78-ai-native-startup.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep79-pmf",
+      "episode_no": 79,
+      "title": "产品市场匹配：AI 产品的 PMF 有什么不同",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep79-pmf.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep80-zero-to-one",
+      "episode_no": 80,
+      "title": "从零到一：AI 时代的创业路径",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep80-zero-to-one.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep81-failure-management",
+      "episode_no": 81,
+      "title": "失败管理：从失败中提取价值",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep81-failure-management.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep82-case-midjourney",
+      "episode_no": 82,
+      "title": "案例：Midjourney——四个人如何做出十亿美金公司",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep82-case-midjourney.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep83-case-cursor-perplexity",
+      "episode_no": 83,
+      "title": "案例：Cursor 和 Perplexity——用 AI 重新定义品类",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep83-case-cursor-perplexity.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep84-case-traditional-ai",
+      "episode_no": 84,
+      "title": "案例：传统行业加 AI 的成功转型",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep84-case-traditional-ai.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep85-innovation-workshop",
+      "episode_no": 85,
+      "title": "你的创新工作坊：用 AI 设计一个创新实验",
+      "module_slug": "module-06-innovation",
+      "module_title": "创新与商业模式",
+      "module_order": 6,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-06-innovation/ep85-innovation-workshop.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep86-data-driven-decision",
+      "episode_no": 86,
+      "title": "数据驱动决策：从拍脑袋到用数据说话",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep86-data-driven-decision.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep87-core-metrics",
+      "episode_no": 87,
+      "title": "核心商业指标：哪些数字必须盯住",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep87-core-metrics.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep88-data-visualization",
+      "episode_no": 88,
+      "title": "数据可视化与 Dashboard：让数据讲故事",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep88-data-visualization.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep89-user-segmentation",
+      "episode_no": 89,
+      "title": "用户分群：AI 发现你看不到的用户群体",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep89-user-segmentation.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep90-funnel-attribution",
+      "episode_no": 90,
+      "title": "漏斗分析与归因：AI 帮你找到增长杠杆",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep90-funnel-attribution.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep91-predictive-analytics",
+      "episode_no": 91,
+      "title": "预测分析：用 AI 预测业务趋势",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep91-predictive-analytics.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep92-ab-testing",
+      "episode_no": 92,
+      "title": "AB 测试与实验文化",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep92-ab-testing.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep93-case-netflix",
+      "episode_no": 93,
+      "title": "案例：Netflix 如何用数据加 AI 决定拍什么剧",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep93-case-netflix.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep94-case-pinduoduo",
+      "episode_no": 94,
+      "title": "案例：拼多多的数据驱动增长引擎",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep94-case-pinduoduo.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep95-ai-tools-guide",
+      "episode_no": 95,
+      "title": "AI 数据分析工具实操：从 Excel 到对话式分析",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep95-ai-tools-guide.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep96-data-diagnosis-workshop",
+      "episode_no": 96,
+      "title": "你的数据诊断：用 AI 搭建业务指标体系",
+      "module_slug": "module-07-data",
+      "module_title": "数据驱动经营",
+      "module_order": 7,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-07-data/ep96-data-diagnosis-workshop.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep97-company-law",
+      "episode_no": 97,
+      "title": "公司法基础：企业设立与法人治理",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep97-company-law.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep98-contract-law",
+      "episode_no": 98,
+      "title": "合同法要点：签合同前必知的事",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep98-contract-law.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep99-ip-protection",
+      "episode_no": 99,
+      "title": "知识产权保护：AI 时代的 IP 新问题",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep99-ip-protection.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep100-data-privacy",
+      "episode_no": 100,
+      "title": "数据隐私与合规：GDPR 与个人信息保护法",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep100-data-privacy.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep101-ai-regulation",
+      "episode_no": 101,
+      "title": "AI 法规全景：全球 AI 监管趋势",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep101-ai-regulation.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep102-ai-ethics",
+      "episode_no": 102,
+      "title": "AI 伦理与算法治理：负责任地使用 AI",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep102-ai-ethics.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep103-ai-risk-management",
+      "episode_no": 103,
+      "title": "AI 风险管理框架：识别和防控 AI 带来的新风险",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep103-ai-risk-management.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep104-labor-law",
+      "episode_no": 104,
+      "title": "劳动法：AI 替代岗位的法律与伦理",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep104-labor-law.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep105-case-legal-pitfalls",
+      "episode_no": 105,
+      "title": "案例：AI 公司的法律踩坑实录",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep105-case-legal-pitfalls.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep106-legal-toolkit",
+      "episode_no": 106,
+      "title": "法律工具箱：AI 时代管理者必备的法律清单",
+      "module_slug": "module-08-legal",
+      "module_title": "法律、合规与风险",
+      "module_order": 8,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-08-legal/ep106-legal-toolkit.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep107-ai-tool-landscape",
+      "episode_no": 107,
+      "title": "AI 工具全景图：管理者必备工具栈",
+      "module_slug": "module-09-workshop",
+      "module_title": "AI实战工作坊",
+      "module_order": 9,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-09-workshop/ep107-ai-tool-landscape.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep108-ai-writing",
+      "episode_no": 108,
+      "title": "AI 写作实操：让 AI 帮你写报告、方案、邮件",
+      "module_slug": "module-09-workshop",
+      "module_title": "AI实战工作坊",
+      "module_order": 9,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-09-workshop/ep108-ai-writing.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep109-ai-data-analysis",
+      "episode_no": 109,
+      "title": "AI 数据分析实操：用自然语言分析业务数据",
+      "module_slug": "module-09-workshop",
+      "module_title": "AI实战工作坊",
+      "module_order": 9,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-09-workshop/ep109-ai-data-analysis.md",
+      "duration_hint": "12 分钟"
+    },
+    {
+      "lesson_id": "ep110-ai-creative",
+      "episode_no": 110,
+      "title": "AI 创意实操：用 AI 做设计、做视频、做 PPT",
+      "module_slug": "module-09-workshop",
+      "module_title": "AI实战工作坊",
+      "module_order": 9,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-09-workshop/ep110-ai-creative.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep111-ai-agent-workshop",
+      "episode_no": 111,
+      "title": "AI Agent 深度实操：企业级应用与组织转型",
+      "module_slug": "module-09-workshop",
+      "module_title": "AI实战工作坊",
+      "module_order": 9,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-09-workshop/ep111-ai-agent-workshop.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep112-ai-coding",
+      "episode_no": 112,
+      "title": "AI 编程实操：不会写代码也能做工具",
+      "module_slug": "module-09-workshop",
+      "module_title": "AI实战工作坊",
+      "module_order": 9,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-09-workshop/ep112-ai-coding.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep113-ai-workflow",
+      "episode_no": 113,
+      "title": "你的 AI 工作流设计：找到你业务中的 AI 杠杆点",
+      "module_slug": "module-09-workshop",
+      "module_title": "AI实战工作坊",
+      "module_order": 9,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-09-workshop/ep113-ai-workflow.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep114-ai-deployment",
+      "episode_no": 114,
+      "title": "AI 工具选型与部署：从试用到全面推广",
+      "module_slug": "module-09-workshop",
+      "module_title": "AI实战工作坊",
+      "module_order": 9,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-09-workshop/ep114-ai-deployment.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep115-full-analysis",
+      "episode_no": 115,
+      "title": "商业分析全流程：从行业研究到战略建议",
+      "module_slug": "module-10-capstone",
+      "module_title": "综合实战与毕业项目",
+      "module_order": 10,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-10-capstone/ep115-full-analysis.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep116-case-review",
+      "episode_no": 116,
+      "title": "案例复盘：一家公司的全方位诊断",
+      "module_slug": "module-10-capstone",
+      "module_title": "综合实战与毕业项目",
+      "module_order": 10,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-10-capstone/ep116-case-review.md",
+      "duration_hint": "14 分钟"
+    },
+    {
+      "lesson_id": "ep117-capstone-part1",
+      "episode_no": 117,
+      "title": "你的毕业项目（上）：问题定义与数据收集",
+      "module_slug": "module-10-capstone",
+      "module_title": "综合实战与毕业项目",
+      "module_order": 10,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-10-capstone/ep117-capstone-part1.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep118-capstone-part2",
+      "episode_no": 118,
+      "title": "你的毕业项目（中）：分析与策略制定",
+      "module_slug": "module-10-capstone",
+      "module_title": "综合实战与毕业项目",
+      "module_order": 10,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-10-capstone/ep118-capstone-part2.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep119-capstone-part3",
+      "episode_no": 119,
+      "title": "你的毕业项目（下）：方案呈现与 AI 点评",
+      "module_slug": "module-10-capstone",
+      "module_title": "综合实战与毕业项目",
+      "module_order": 10,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-10-capstone/ep119-capstone-part3.md",
+      "duration_hint": "13 分钟"
+    },
+    {
+      "lesson_id": "ep120-graduation",
+      "episode_no": 120,
+      "title": "毕业寄语：AI 时代的终身学习者",
+      "module_slug": "module-10-capstone",
+      "module_title": "综合实战与毕业项目",
+      "module_order": 10,
+      "source_path": "/Users/lincoln/Documents/Playground/mindsleap/school/business-school/content/module-10-capstone/ep120-graduation.md",
+      "duration_hint": "12 分钟"
+    }
+  ]
+}

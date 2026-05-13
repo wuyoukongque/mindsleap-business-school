@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>MindsLeap School · Business School</title>
+  <link rel="stylesheet" href="./assets/css/site-shell.css" />
+  <style>
+    .site-home-page .wrap { width: min(980px, 100%); }
+    .hero { margin-top: 18px; }
+    .hero-main { padding: 30px; background: linear-gradient(180deg, #17345D 0%, #10213A 100%); border-color: #29466E; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); color: #EEF4FF; font-size: 12px; font-weight: 800; }
+    h1 { margin: 18px 0 14px; font-size: clamp(30px, 5vw, 48px); line-height: 1.1; letter-spacing: -.03em; color: #FFFFFF; }
+    .lead { max-width: 100%; color: #D5E0EE; font-size: 16px; line-height: 1.9; }
+    .hero-note { margin-top: 18px; max-width: 760px; color: #D5E0EE; font-size: 15px; line-height: 1.9; }
+    .hero-actions { display:flex; gap:12px; margin-top: 24px; flex-wrap: wrap; }
+    .section { margin-top: 22px; }
+    .section-head h3 { font-size: 20px; }
+    .how-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+    .step-card { padding: 16px; border-radius: 20px; background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .step-label { color: var(--red); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .step-card h4 { margin: 10px 0 8px; font-size: 17px; color: var(--blue); }
+    .step-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .footer-note { margin-top: 22px; padding: 16px 18px; border-radius: 18px; background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow); color: var(--muted); font-size: 13px; line-height: 1.8; }
+    @media (max-width: 920px) {
+      .how-grid { grid-template-columns: 1fr; }
+      .lead { max-width: 100%; }
+      .hero-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body class="site-home-page">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand"><img class="brand-logo" src="./assets/img/MindsLeap-Logo-blue-260322.png" alt="MindsLeap" /><span class="brand-text">商学院</span></div>
+      <div class="top-tag">Business School</div>
+    </div>
+
+    <section class="hero">
+      <div class="card hero-main">
+        <div class="eyebrow">AI 时代的商学院课程</div>
+        <h1>把经典商学院框架，重新放回 AI 时代的经营现实里。</h1>
+        <div class="lead">
+          MindsLeap Business School 的第一版，不先追求复杂的 Agent 交互，而是先把课程本身做好：用更适合企业家与决策者的方式，系统重构战略、增长、领导力与 AI 时代的经营认知。
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="./map.html?entry=sequence">开始学习</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h3>你会经历什么</h3>
+        <p>系统化学习，而不是碎片信息</p>
+      </div>
+      <div class="how-grid">
+        <article class="step-card">
+          <div class="step-label">Step 01</div>
+          <h4>从完整框架开始</h4>
+          <p>先看到完整学习地图，知道这是一套系统性的课程，而不是几节零散内容。</p>
+        </article>
+        <article class="step-card">
+          <div class="step-label">Step 02</div>
+          <h4>用音频完成一节课</h4>
+          <p>以音频为主，配合 slides、字幕和重点总结，在碎片时间里完成一节完整学习。</p>
+        </article>
+        <article class="step-card">
+          <div class="step-label">Step 03</div>
+          <h4>学完后带着判断离开</h4>
+          <p>每节课后都有课后整理，帮助你把今天学到的框架，真正带回企业经营里。</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      MindsLeap 不替你做商业决策，而是帮助你建立更好的思考方式。第一版先把课程内容和学习体验打磨扎实，后续再逐步加入更完整的 Agentic 学习交互。
+    </div>
+  </div>
+</body>
+</html>

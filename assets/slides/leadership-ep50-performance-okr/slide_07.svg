@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#FFFFFF"/>
+<line x1="96" y1="90" x2="1504" y2="90" stroke="#DCE6F0" stroke-width="2"/>
+<line x1="96" y1="810" x2="1504" y2="810" stroke="#DCE6F0" stroke-width="2"/>
+<rect x="640" y="128" width="320" height="50" rx="25" fill="#9C113B"/>
+<text x="800" y="161" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">第 3 课 · AI时代领导力</text>
+<text x="800" y="240" text-anchor="middle" font-size="54" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">持续反馈才是关键</text>
+<rect x="165" y="380" width="1270" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="211" cy="427.0" r="24" fill="#9C113B"/>
+<text x="211" y="435.0" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">1</text>
+<text x="257" y="407.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">一年一次的考核，节奏太慢了。更有效的做法，是持续反馈、短周期复盘</text>
+<text x="257" y="445.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">和及时校准</text>
+<rect x="165" y="488" width="1270" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="211" cy="535.0" r="24" fill="#9C113B"/>
+<text x="211" y="543.0" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">2</text>
+<text x="257" y="515.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">每周或双周的一对一，不一定很长，但要回答三件事：做得怎样、卡在哪</text>
+<text x="257" y="553.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">里、接下来重点是什么</text>
+<rect x="165" y="596" width="1270" height="94" rx="28" fill="#F5F8FC" stroke="#DCE6F0" stroke-width="2"/>
+<circle cx="211" cy="643.0" r="24" fill="#9C113B"/>
+<text x="211" y="651.0" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF" font-family="Microsoft YaHei, PingFang SC, sans-serif">3</text>
+<text x="257" y="623.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">AI 可以辅助整理绩效数据、沉淀反馈记录、识别成长机会，但最终的判</text>
+<text x="257" y="661.0" font-size="34" font-weight="700" fill="#1E477C" font-family="Microsoft YaHei, PingFang SC, sans-serif">断和沟通仍然属于领导者</text>
+</svg>

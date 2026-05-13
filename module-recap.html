@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>MindsLeap School · 模块复盘</title>
+  <style>
+    :root{--blue:#1E477C;--red:#9C113B;--text:#12263F;--muted:#667A96;--border:#DCE6F0;--shadow:0 14px 34px rgba(18,38,63,.08)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#F8FBFE 0%,#EEF4F8 100%);color:var(--text)}
+    .wrap{width:min(980px,100%);margin:0 auto;padding:20px 16px 44px}
+    .page-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:6px}
+    .brand-logo{display:block;height:26px;width:auto;object-fit:contain}
+    .brand-text{font-size:16px;font-weight:800;color:#1E477C;line-height:1;display:inline-flex;align-items:center;transform:translateY(1px)}
+    .back{color:var(--blue);text-decoration:none;font-weight:800;font-size:13px}
+    .hero,.panel,.bottom{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}
+    .hero{padding:24px}
+    .eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:#EEF4FA;color:var(--blue);font-size:12px;font-weight:800}
+    h1{margin:14px 0 10px;color:var(--blue);font-size:clamp(30px,4vw,40px);line-height:1.15}
+    .sub{color:var(--muted);font-size:14px;line-height:1.85;max-width:760px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .meta span{display:inline-flex;padding:7px 10px;border-radius:999px;background:#F7FAFE;border:1px solid var(--border);font-size:12px;color:var(--muted);font-weight:700}
+    .panel{padding:18px}
+    .panel h2{margin:0 0 12px;color:var(--blue);font-size:18px;display:flex;align-items:center;gap:10px}
+    .panel h2::before{content:"";width:10px;height:10px;border-radius:999px;background:var(--red)}
+    .hint{margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.75}
+    .summary{padding:16px;border-radius:18px;background:#F8FBFE;border:1px solid var(--border);color:#37506E;font-size:14px;line-height:1.85}
+    .list{display:grid;gap:12px}
+    .lesson-card{padding:16px;border-radius:18px;background:#fff;border:1px solid var(--border)}
+    .lesson-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .lesson-head strong{display:block;color:var(--blue);font-size:16px}
+    .lesson-head span{display:inline-flex;padding:6px 10px;border-radius:999px;background:#EEF4FA;color:var(--blue);font-size:11px;font-weight:800;white-space:nowrap}
+    .answer-grid{display:grid;gap:10px;margin-top:12px}
+    .answer-item{padding:12px;border-radius:14px;background:#F8FBFE;border:1px solid var(--border)}
+    .answer-item label{display:block;color:var(--blue);font-size:12px;font-weight:800;margin-bottom:6px}
+    .answer-item p{margin:0;color:#37506E;font-size:13px;line-height:1.8;white-space:pre-wrap}
+    .empty{padding:18px;border-radius:18px;background:#F8FBFE;border:1px dashed var(--border);color:var(--muted);font-size:14px;line-height:1.8}
+    .bottom{padding:18px}
+    .bottom strong{display:block;color:var(--blue);font-size:16px}
+    .bottom span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.75}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:14px;text-decoration:none;font-weight:800;font-size:14px;border:0;cursor:pointer}
+    .primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(18,38,63,.14)}
+    .secondary{background:#fff;color:var(--blue);border:1px solid var(--border)}
+    @media (max-width:760px){.actions{flex-direction:column}.actions .btn,.actions a{width:100%}.lesson-head{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="page-top">
+      <div class="brand"><img class="brand-logo" src="./assets/img/MindsLeap-Logo-blue-260322.png" alt="MindsLeap" /><span class="brand-text">商学院</span></div>
+      <a class="back" id="backLink" href="./map.html?entry=sequence">← 返回学习地图</a>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">模块复盘</div>
+      <h1 id="title">本模块的学习记录</h1>
+      <div class="sub" id="sub">这一版 MVP 先把你在模块里的关键回答记录下来，帮助你看见自己已经想清楚了什么。更完整的 AI 模块总结，会在下一版加入。</div>
+      <div class="meta" id="meta"></div>
+    </section>
+
+    <section class="panel">
+      <h2>当前模块收束</h2>
+      <p class="hint">先不急着让 AI 替你总结。先把你在这个模块里已经给出的判断放在一起看一遍，这本身就会带来清晰感。</p>
+      <div class="summary" id="summaryBox">正在读取你的模块学习记录…</div>
+    </section>
+
+    <section class="panel">
+      <h2>本模块已记录的回答</h2>
+      <p class="hint">这些内容会作为未来模块级 AI 复盘的基础输入。</p>
+      <div id="lessonList" class="list"></div>
+    </section>
+
+    <section class="bottom">
+      <strong id="bottomTitle">接下来你想怎么继续？</strong>
+      <span id="bottomCopy">你可以回到模块页继续看章节结构，也可以回到学习地图，继续推进下一步。</span>
+      <div class="actions">
+        <a class="btn primary" id="primaryBtn" href="./map.html?entry=sequence">回到学习地图</a>
+        <a class="btn secondary" id="secondaryBtn" href="./index.html">返回首页</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const MODULES = {
+      'ai-foundation': {
+        title: 'AI时代商业认知',
+        label: '模块零 · AI时代商业认知',
+        modulePage: './module-ai-foundation.html?entry=sequence',
+        nextLabel: '进入企业战略模块',
+        nextHref: './module-strategy.html?entry=sequence',
+        openLessons: 2
+      },
+      'strategy': {
+        title: '企业战略',
+        label: '模块一 · 企业战略',
+        modulePage: './module-strategy.html?entry=sequence',
+        nextLabel: '回到学习地图',
+        nextHref: './map.html?entry=sequence',
+        openLessons: 2
+      }
+    };
+
+    function readStorage(key, fallback = null) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    function escapeHtml(text) {
+      return String(text || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    async function init() {
+      const params = new URLSearchParams(window.location.search);
+      const moduleId = params.get('module') || 'ai-foundation';
+      const moduleMeta = MODULES[moduleId] || MODULES['ai-foundation'];
+      const manifest = await fetch('./assets/data/course-manifest.json').then(r => r.json()).catch(() => null);
+      const moduleStore = readStorage('mindsleap_guest_module_responses', {});
+      const moduleData = moduleStore?.[moduleId] || { lessons: {} };
+      const lessons = Object.values(moduleData.lessons || {}).sort((a,b) => (a.lesson_key || '').localeCompare(b.lesson_key || ''));
+
+      document.getElementById('title').textContent = `${moduleMeta.title} · 模块复盘`;
+      document.getElementById('backLink').href = moduleMeta.modulePage;
+      document.getElementById('secondaryBtn').href = moduleMeta.modulePage;
+      document.getElementById('secondaryBtn').textContent = '回到模块页';
+      document.getElementById('primaryBtn').href = moduleMeta.nextHref;
+      document.getElementById('primaryBtn').textContent = moduleMeta.nextLabel;
+
+      const metaEl = document.getElementById('meta');
+      const totalLessons = moduleMeta.openLessons;
+      const doneLessons = lessons.length;
+      metaEl.innerHTML = `
+        <span>${moduleMeta.label}</span>
+        <span>当前 Demo 已记录 ${doneLessons} / ${totalLessons} 节</span>
+        <span>后续会加入模块级 AI 总结</span>
+      `;
+
+      const summaryBox = document.getElementById('summaryBox');
+      const lessonList = document.getElementById('lessonList');
+
+      if (!lessons.length) {
+        summaryBox.textContent = '你还没有在这个模块里留下课后回答。可以先回到课程页，完成一节课后的 3 个问题。';
+        lessonList.innerHTML = `<div class="empty">当前还没有可用于模块复盘的回答记录。等你完成课后问题后，这里会自动聚合本模块的关键回答。</div>`;
+        return;
+      }
+
+      summaryBox.textContent = `你已经在 ${doneLessons} 节课里留下了回答。先把这些回答放在一起看一遍，你会更容易看见自己在这个模块里反复关注的重点。下一版，我们会基于这些回答生成更完整的 AI 模块总结。`;
+
+      lessonList.innerHTML = lessons.map((lesson, index) => {
+        const answers = Object.values(lesson.answers || {}).filter(Boolean);
+        const labels = ['问题一', '问题二', '问题三'];
+        const answerHtml = answers.length
+          ? answers.map((answer, i) => `
+              <div class="answer-item">
+                <label>${labels[i] || `问题 ${i + 1}`}</label>
+                <p>${escapeHtml(answer)}</p>
+              </div>
+            `).join('')
+          : `<div class="answer-item"><label>当前状态</label><p>这一节暂时还没有记录到有效回答。</p></div>`;
+        return `
+          <article class="lesson-card">
+            <div class="lesson-head">
+              <div>
+                <strong>${escapeHtml(lesson.lesson_title || `第 ${index + 1} 节`)}</strong>
+              </div>
+              <span>已记录</span>
+            </div>
+            <div class="answer-grid">${answerHtml}</div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    init();
+  </script>
+</body>
+</html>

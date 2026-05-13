@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI 教练</title>
+  <style>
+    :root{--blue:#1E477C;--red:#9C113B;--text:#12263F;--muted:#667A96;--border:#DCE6F0;--shadow:0 14px 34px rgba(18,38,63,.08)}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#F8FBFE 0%,#EEF4F8 100%);color:var(--text)}
+    .wrap{width:min(860px,100%);margin:0 auto;padding:20px 16px 40px}.back{color:var(--blue);text-decoration:none;font-weight:800;font-size:13px}
+    .top,.chat,.composer{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}
+    .top{padding:22px}.eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:#EEF4FA;color:var(--blue);font-size:12px;font-weight:800}
+    h1{margin:14px 0 8px;color:var(--blue);font-size:30px}.sub{color:var(--muted);font-size:14px;line-height:1.8}
+    .context{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.context span{display:inline-flex;padding:7px 10px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12px;color:var(--muted);font-weight:700}
+    .chat{padding:18px;display:grid;gap:14px}.bubble{max-width:88%;padding:14px 16px;border-radius:18px;line-height:1.8;font-size:14px;white-space:pre-wrap;text-align:left}.ai{background:#F6FAFE;border:1px solid #E4EDF6;color:#31465F}.user{background:#17345D;color:#EEF4FF;margin-left:0}
+    .quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}.chip{display:inline-flex;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:12px;font-weight:800;color:var(--blue);text-decoration:none;cursor:pointer}
+    .composer{padding:16px}.label{font-size:13px;color:var(--muted);margin-bottom:10px}.input{min-height:110px;width:100%;border:1px solid var(--border);border-radius:16px;padding:14px;font:inherit;color:var(--text);background:#FBFDFF;resize:vertical}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:14px;text-decoration:none;font-weight:800;font-size:14px}.primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(18,38,63,.14)}.secondary{background:#fff;color:var(--blue);border:1px solid var(--border)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="./thought-card.html">← 返回 AI 整理</a>
+    <section class="top">
+      <div class="eyebrow">AI 教练 / 连续问答入口</div>
+      <h1>继续把问题想清楚，而不是急着下结论</h1>
+      <div class="sub">这里不是一次性课后整理，而是你和 AI 教练的连续共创空间。系统会记得你刚学过的课程、当前思考卡，以及你现在最想推进的问题。</div>
+      <div class="context" id="coachContext">
+        <span id="contextLesson">最近课程：AI时代，什么是战略？</span>
+        <span id="contextProblem">当前问题：机会是否服务长期战略</span>
+        <span id="contextState">当前状态：已生成一页纸初稿</span>
+      </div>
+    </section>
+
+    <section class="chat" id="coachChat">
+      <div class="bubble ai" id="coachIntro">我已经看到了你刚整理的一页纸战略思考卡。现在最值得继续深挖的，是：你看到的那个机会，到底是在强化长期战略，还是只是一个看起来很热的新方向。你想先聊哪一块？</div>
+      <div class="quick">
+        <button class="chip" type="button" data-prompt="这个机会为什么值得做？">这个机会为什么值得做？</button>
+        <button class="chip" type="button" data-prompt="我到底应该少做什么？">我到底应该少做什么？</button>
+        <button class="chip" type="button" data-prompt="怎样判断这件事是否服务长期战略？">怎样判断这件事是否服务长期战略？</button>
+      </div>
+    </section>
+
+    <section class="composer">
+      <div class="label">继续输入你的问题，或者把当前最纠结的一点说给 AI 教练听。</div>
+      <textarea class="input" id="coachInput" placeholder="例如：我们现在看到了一个 AI 相关的新机会，但我不确定它是不是该成为今年的重点。"></textarea>
+      <div class="actions">
+        <button class="btn primary" id="coachSendBtn" type="button">继续对话</button>
+        <a class="btn secondary" href="./thought-card.html">回到 AI 整理</a>
+      </div>
+    </section>
+  </div>
+  <script src="./assets/js/auth-flow.js"></script>
+  <script>
+    (function () {
+      const { readStorage, writeStorage, requireAuth, StorageKeys } = window.MindsLeapAuthFlow;
+      const coachInput = document.getElementById('coachInput');
+      const coachSendBtn = document.getElementById('coachSendBtn');
+      const coachChat = document.getElementById('coachChat');
+      const API_BASE = window.location.port === '8013' ? '' : 'http://127.0.0.1:8013';
+      const coachIntro = document.getElementById('coachIntro');
+      const contextLesson = document.getElementById('contextLesson');
+      const contextProblem = document.getElementById('contextProblem');
+      const contextState = document.getElementById('contextState');
+      const quickChips = [...document.querySelectorAll('.chip[data-prompt]')];
+      const coachDraft = readStorage(StorageKeys.guestCoachDraft);
+      const pathDraft = readStorage(StorageKeys.guestPath, {});
+      const reflectionDraft = readStorage(StorageKeys.guestReflectionDraft, {});
+      if (coachDraft?.first_message) {
+        coachInput.value = coachDraft.first_message;
+      }
+
+      function appendBubble(role, text) {
+        const el = document.createElement('div');
+        el.className = `bubble ${role}`;
+        el.textContent = text;
+        coachChat.appendChild(el);
+        coachChat.scrollTop = coachChat.scrollHeight;
+      }
+
+      function buildThoughtCardContext() {
+        return {
+          answers: reflectionDraft?.answers || {},
+          notes: reflectionDraft?.notes || ''
+        };
+      }
+
+      async function requestCoachReply(message) {
+        const resp = await fetch(`${API_BASE}/api/coach-chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            lessonId: coachDraft?.lesson_id || 'strategy-01',
+            lessonTitle: contextLesson.textContent.replace('最近课程：', '').trim(),
+            firstMessage: coachDraft?.first_message || '',
+            message,
+            pathSummary: pathDraft?.goal || pathDraft?.reason || '',
+            thoughtCard: buildThoughtCardContext()
+          })
+        });
+        if (!resp.ok) throw new Error(`request failed: ${resp.status}`);
+        const json = await resp.json();
+        return json.data.reply;
+      }
+
+      function hydrateContext() {
+        const lessonLabel = coachDraft?.lesson_id ? `最近课程：${coachDraft.lesson_id}` : '最近课程：AI时代，什么是战略？';
+        const problemLabel = pathDraft?.goal ? `当前问题：${pathDraft.goal}` : '当前问题：机会是否服务长期战略';
+        const stateLabel = reflectionDraft?.updated_at ? '当前状态：已生成一页纸初稿' : '当前状态：正在形成第一轮判断';
+        contextLesson.textContent = lessonLabel;
+        contextProblem.textContent = problemLabel;
+        contextState.textContent = stateLabel;
+        if (pathDraft?.goal) {
+          coachIntro.textContent = `我已经看到了你当前的学习路径和思考背景。现在最值得继续深挖的，是：${pathDraft.goal}。你想先聊哪一块？`;
+        }
+      }
+
+      quickChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          coachInput.value = chip.dataset.prompt || '';
+          coachInput.focus();
+        });
+      });
+
+      hydrateContext();
+
+      coachSendBtn.addEventListener('click', async () => {
+        const message = coachInput.value.trim();
+        if (!message) {
+          alert('先输入你想继续聊的问题。');
+          return;
+        }
+        const lessonId = coachDraft?.lesson_id || 'strategy-01';
+        writeStorage(StorageKeys.guestCoachDraft, {
+          lesson_id: lessonId,
+          first_message: message,
+          updated_at: Date.now()
+        });
+        const allowed = requireAuth('send_coach_message', {
+          lesson_id: lessonId
+        }, {
+          type: 'coach',
+          url: window.location.pathname + window.location.search
+        });
+        if (!allowed.allowed) return;
+
+        appendBubble('user', message);
+        coachSendBtn.disabled = true;
+        coachSendBtn.textContent = '思考中...';
+
+        try {
+          const reply = await requestCoachReply(message);
+          appendBubble('ai', reply);
+        } catch (e) {
+          appendBubble('ai', '我先继续往下追问：这件事如果真的成为今年重点，它最可能分散团队注意力的地方是什么？是资源、节奏，还是判断标准？');
+        }
+
+        coachSendBtn.disabled = false;
+        coachSendBtn.textContent = '继续对话';
+        coachInput.value = '';
+      });
+    })();
+  </script>
+</body>
+</html>

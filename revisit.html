@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>学习回访</title>
+  <style>
+    :root{--blue:#1E477C;--red:#9C113B;--text:#12263F;--muted:#667A96;--border:#DCE6F0;--shadow:0 14px 34px rgba(18,38,63,.08)}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#F8FBFE 0%,#EEF4F8 100%);color:var(--text)}
+    .wrap{width:min(820px,100%);margin:0 auto;padding:20px 16px 40px}.back{color:var(--blue);text-decoration:none;font-weight:800;font-size:13px}
+    .top,.panel{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}.top{padding:22px}.eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:#EEF4FA;color:var(--blue);font-size:12px;font-weight:800}h1{margin:14px 0 8px;color:var(--blue);font-size:30px}.sub{color:var(--muted);font-size:14px;line-height:1.8}
+    .panel{padding:20px}.question{font-size:18px;color:var(--blue);font-weight:800;line-height:1.6;margin-bottom:14px}.choices{display:grid;gap:12px}.choice{padding:15px 16px;border-radius:18px;border:1px solid var(--border);background:#fff;cursor:pointer;transition:.15s ease}.choice:hover,.choice.active{background:#F8FBFE;border-color:#C9D7E8}.choice strong{display:block;font-size:15px}.choice span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.7}.next{margin-top:18px;padding:16px;border-radius:18px;background:#F8FBFE;border:1px solid #E5EDF6;color:#48607C;font-size:13px;line-height:1.8;display:none}.next.active{display:block}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:14px;text-decoration:none;font-weight:800;font-size:14px}.primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(18,38,63,.14)}.secondary{background:#fff;color:var(--blue);border:1px solid var(--border)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="./index.html">← 返回首页</a>
+    <section class="top">
+      <div class="eyebrow">下次回来时的回访状态</div>
+      <h1>上次那张思考卡，你后来有带回企业里重新看问题吗？</h1>
+      <div class="sub">回访不是催促，而是帮助你把学习真正带回现实。系统会先接住你当前的状态，再决定是继续复盘，还是进入下一节推荐课程。</div>
+    </section>
+
+    <section class="panel">
+      <div class="question">请选择你现在更接近的状态</div>
+      <div class="choices" id="choices">
+        <div class="choice active" data-message="很好，我们可以先复盘一下：你带回去后最有反馈的是哪一点？然后再决定下一步继续深挖，还是进入下一节课程。">
+          <strong>已经试着用了</strong>
+          <span>我已经把上次那张思考卡带回企业里，开始用它重新看问题。</span>
+        </div>
+        <div class="choice" data-message="没关系，我们可以先用 2 分钟把上次的关键点再捋一遍，帮你把这件事重新拿起来，再决定要不要进入下一节。">
+          <strong>还没开始</strong>
+          <span>这几天太忙了，还没有真正把它带回去用。</span>
+        </div>
+        <div class="choice" data-message="这很正常。我们可以直接进入 AI 教练入口，把你现在最卡的一点继续聊清楚，再回来更新这张卡。">
+          <strong>想过，但还不够清楚</strong>
+          <span>我知道这件事重要，但现在还不确定该怎么推进。</span>
+        </div>
+      </div>
+      <div class="next active" id="nextBox">很好，我们可以先复盘一下：你带回去后最有反馈的是哪一点？然后再决定下一步继续深挖，还是进入下一节课程。</div>
+      <div class="actions">
+        <a class="btn primary" href="./ai-coach.html" id="primaryBtn">继续复盘这个问题</a>
+        <a class="btn secondary" href="./map.html">查看下一步推荐课程</a>
+      </div>
+    </section>
+  </div>
+  <script>
+    const choices=[...document.querySelectorAll('.choice')];
+    const nextBox=document.getElementById('nextBox');
+    const primaryBtn=document.getElementById('primaryBtn');
+    choices.forEach(choice=>choice.addEventListener('click',()=>{
+      choices.forEach(c=>c.classList.remove('active'));
+      choice.classList.add('active');
+      nextBox.textContent=choice.dataset.message;
+      if(choice.textContent.includes('还没开始')) primaryBtn.textContent='先快速回顾上次重点';
+      else if(choice.textContent.includes('不够清楚')) primaryBtn.textContent='继续和 AI 教练聊聊';
+      else primaryBtn.textContent='继续复盘这个问题';
+    }));
+  </script>
+</body>
+</html>

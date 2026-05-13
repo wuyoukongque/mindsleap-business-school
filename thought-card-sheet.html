@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>MindsLeap · 一页纸思考卡</title>
+  <style>
+    :root{--blue:#1E477C;--red:#9C113B;--text:#12263F;--muted:#667A96;--border:#DCE6F0;--soft:#F7FAFE;--shadow:0 14px 34px rgba(18,38,63,.08)}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#F8FBFE 0%,#EEF4F8 100%);color:var(--text)}
+    .wrap{width:min(860px,100%);margin:0 auto;padding:20px 16px 40px}.back{color:var(--blue);text-decoration:none;font-weight:800;font-size:13px}
+    .top,.item,.note{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}
+    .top{padding:22px}.eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:#EEF4FA;color:var(--blue);font-size:12px;font-weight:800}
+    h1{margin:14px 0 8px;color:var(--blue);font-size:32px;line-height:1.2}.sub{color:var(--muted);font-size:14px;line-height:1.8}
+    .summary{margin-top:16px;padding:16px;border-radius:18px;background:#F8FBFE;border:1px solid #E7EEF5;color:#364A66;line-height:1.8;font-size:14px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.meta span{display:inline-flex;padding:7px 10px;border-radius:999px;background:#FFF;border:1px solid var(--border);font-size:12px;color:var(--muted);font-weight:700}
+    .stack{display:grid;gap:14px;margin-top:18px}.item{padding:18px}.item h2{margin:0 0 8px;color:var(--blue);font-size:18px}.item p{margin:0;color:var(--muted);font-size:14px;line-height:1.8}
+    .bottom{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:14px;text-decoration:none;font-weight:800;font-size:14px}.primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(18,38,63,.14)}.secondary{background:#fff;color:var(--blue);border:1px solid var(--border)}
+    .note{padding:14px 16px;font-size:13px;color:var(--muted);line-height:1.8}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="./thought-card.html">← 返回 AI 整理</a>
+    <section class="top">
+      <div class="eyebrow">一页纸思考卡</div>
+      <h1 id="cardHeadline">围绕当前最重要的问题，形成一版可继续使用的判断卡</h1>
+      <div class="sub" id="cardSubline">这不是标准答案，而是你与 AI 共创之后得到的第一版结构化结果。</div>
+      <div class="summary" id="cardSummary">系统正在读取你刚才确认的整理结果。</div>
+      <div class="summary" id="cardEvaluation" style="margin-top:12px;background:#fff;border-style:dashed">AI 评价会显示在这里。</div>
+      <div class="meta">
+        <span id="metaStatus">成果状态：已生成初稿</span>
+        <span id="metaMode">生成方式：你 + AI 共创</span>
+        <span id="metaMemory">下次回来时会回访这张卡</span>
+      </div>
+    </section>
+
+    <div class="stack">
+      <section class="item"><h2>1. 一句话判断</h2><p id="cardOpportunity"></p></section>
+      <section class="item"><h2>2. 关键投入</h2><p id="cardResources"></p></section>
+      <section class="item"><h2>3. 和长期方向的关系</h2><p id="cardAlignment"></p></section>
+      <section class="item"><h2>4. 为了聚焦，要少做什么</h2><p id="cardLessDo"></p></section>
+      <section class="item"><h2>5. 下一步最值得验证的问题</h2><p id="cardValidate"></p></section>
+    </div>
+
+    <div class="bottom">
+      <a class="btn primary" id="saveCardBtn" href="./revisit.html">保存这张卡</a>
+      <a class="btn secondary" id="continueCoachBtn" href="./ai-coach.html">继续与 AI 教练打磨</a>
+    </div>
+
+    <div class="note">真正的价值不在“生成了一张卡”，而在于：你已经把原本模糊的问题，整理成了可以继续讨论、验证和带回企业使用的结构化判断。</div>
+  </div>
+  <script src="./assets/js/auth-flow.js"></script>
+  <script>
+    (function(){
+      const { readStorage, writeStorage, requireAuth, StorageKeys } = window.MindsLeapAuthFlow;
+      const cardPayload = JSON.parse(localStorage.getItem('mindsleap_thought_card_ai_result') || 'null') || {};
+      const card = cardPayload.card || (readStorage(StorageKeys.guestReflectionDraft, {}) || {}).ai_card || {};
+      const meta = cardPayload.meta || (readStorage(StorageKeys.guestReflectionDraft, {}) || {}).ai_meta || {};
+      const lessonTitle = (readStorage(StorageKeys.guestReflectionDraft, {}) || {}).lesson_title || '当前课程';
+      document.getElementById('cardSubline').textContent = `来源课程：${lessonTitle} · 这是一张可以继续追问、继续打磨、继续带回企业使用的第一版结构卡。`;
+      document.getElementById('cardHeadline').textContent = card.headline || '围绕当前最重要的问题，形成一版可继续使用的判断卡';
+      document.getElementById('cardSummary').textContent = card.summary || '还没有拿到结构化结果，请返回上一页重新生成。';
+      document.getElementById('cardEvaluation').textContent = card.evaluation || 'AI 会在这里说明：你的回答哪里已经清楚，哪里还值得继续打磨。';
+      document.getElementById('cardOpportunity').textContent = card.opportunity || '—';
+      document.getElementById('cardResources').textContent = card.resources || '—';
+      document.getElementById('cardAlignment').textContent = card.alignment || '—';
+      document.getElementById('cardLessDo').textContent = card.less_do || '—';
+      document.getElementById('cardValidate').textContent = card.next_question || '—';
+      document.getElementById('metaStatus').textContent = meta.fallback ? '成果状态：已生成演示版初稿' : '成果状态：已生成 AI 初稿';
+      document.getElementById('metaMode').textContent = meta.fallback ? '生成方式：规则整理 + AI 兜底' : '生成方式：你 + AI 共创';
+      document.getElementById('metaMemory').textContent = '下次回来时会回访这张卡';
+
+      document.getElementById('saveCardBtn').addEventListener('click', e => {
+        const allowed = requireAuth('generate_thought_card', { source: 'thought_card_sheet' }, { type: 'thought_card', url: './revisit.html?source=thought-card-sheet' });
+        if (!allowed.allowed) e.preventDefault();
+      });
+      document.getElementById('continueCoachBtn').addEventListener('click', e => {
+        const prompt = (card.coach_prompts || [])[0] || '我想继续把这张思考卡打磨得更清楚。';
+        writeStorage(StorageKeys.guestCoachDraft, { lesson_id: lessonTitle, lesson_title: lessonTitle, first_message: prompt, updated_at: Date.now() });
+        const allowed = requireAuth('open_coach', { source: 'thought_card_sheet' }, { type: 'thought_card', url: './ai-coach.html?source=thought-card-sheet' });
+        if (!allowed.allowed) e.preventDefault();
+      });
+    })();
+  </script>
+</body>
+</html>

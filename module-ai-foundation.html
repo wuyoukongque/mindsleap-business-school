@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>AI时代商业认知 · 模块章节</title>
+  <link rel="stylesheet" href="./assets/css/site-shell.css" />
+</head>
+<body class="module-page">
+  <div class="wrap">
+    <div class="page-top">
+      <div class="brand"><img class="brand-logo" src="./assets/img/MindsLeap-Logo-blue-260322.png" alt="MindsLeap" /><span class="brand-text">商学院</span></div>
+      <a class="back" id="backLink" href="./map.html?entry=sequence">← 返回学习地图</a>
+    </div>
+
+    <section class="card hero">
+      <div class="pill" id="modulePill"></div>
+      <h1 id="moduleTitle"></h1>
+      <div class="lead" id="moduleLead"></div>
+      <div class="hero-meta" id="heroMeta"></div>
+    </section>
+
+    <div class="layout">
+      <main class="card section">
+        <h2>Foundation 模块全部章节</h2>
+        <div class="chapter-list" id="chapterList"></div>
+      </main>
+
+      <aside class="card section">
+        <h2 id="sideTitle"></h2>
+        <div class="side-grid" id="sideGrid"></div>
+
+        <div style="margin-top:16px">
+          <h2 id="pathTitle" style="margin-bottom:12px"></h2>
+          <div class="path-list" id="pathList"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="./assets/config/config-registry.js"></script>
+  <script src="./assets/js/module-runtime.js"></script>
+  <script src="./assets/config/module-ai-foundation.js"></script>
+  <script>
+    const entryMode = new URLSearchParams(window.location.search).get('entry') || 'sequence';
+    window.MindsLeapModuleRuntime.initModulePage({
+      ...window.MindsLeapConfigs.modules.aiFoundation,
+      entryMode
+    });
+  </script>
+</body>
+</html>

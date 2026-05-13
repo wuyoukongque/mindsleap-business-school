@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>保存你的学习路径</title>
+  <style>
+    :root{--blue:#1E477C;--red:#9C113B;--text:#12263F;--muted:#667A96;--border:#DCE6F0;--shadow:0 14px 34px rgba(18,38,63,.08)}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#F8FBFE 0%,#EEF4F8 100%);color:var(--text)}
+    .wrap{width:min(520px,100%);margin:0 auto;padding:24px 16px 40px}.card{background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow);padding:24px}
+    .brand{display:flex;align-items:center;gap:6px}.brand-logo{display:block;height:26px;width:auto;object-fit:contain}.brand-text{font-size:16px;font-weight:800;color:#1E477C;display:inline-flex;align-items:center;transform:translateY(1px)}
+    .eyebrow{display:inline-flex;margin-top:18px;padding:8px 12px;border-radius:999px;background:#EEF4FA;color:var(--blue);font-size:12px;font-weight:800}
+    h1{margin:14px 0 10px;color:var(--blue);font-size:30px;line-height:1.2}.sub{color:var(--muted);font-size:14px;line-height:1.8}
+    .meta{display:grid;gap:10px;margin-top:16px;padding:14px;border-radius:18px;background:#F8FBFE;border:1px solid var(--border);color:#4B607A;font-size:13px;line-height:1.7}
+    .meta strong{color:var(--blue)}
+    .form{display:grid;gap:12px;margin-top:18px}.field{display:grid;gap:8px}.field label{font-size:13px;font-weight:800;color:var(--blue)}
+    .input{min-height:48px;border-radius:14px;border:1px solid var(--border);padding:0 14px;font:inherit;color:var(--text);background:#fff}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:14px;text-decoration:none;font-weight:800;font-size:14px;border:0;cursor:pointer}
+    .primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(18,38,63,.14)}.secondary{background:#fff;color:var(--blue);border:1px solid var(--border)}
+    .hint{margin-top:8px;font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card">
+      <div class="brand"><img class="brand-logo" src="./assets/img/MindsLeap-Logo-blue-260322.png" alt="MindsLeap" /><span class="brand-text">商学院</span></div>
+      <div class="eyebrow">先保存，再继续</div>
+      <h1>保存你的学习路径与思考</h1>
+      <div class="sub">登录后，系统会记住你的课程进度、推荐路径、课后思考，以及 AI 教练的上下文。下次回来时，你可以从刚才的地方继续。</div>
+      <div class="meta" id="registerMeta">
+        <div><strong>当前将会保存：</strong>学习路径、课程进度、课后思考草稿</div>
+        <div>这是一个 MVP 版本的演示登录，先帮助我们把完整流程跑通。</div>
+      </div>
+      <div class="form">
+        <div class="field">
+          <label for="phoneInput">手机号</label>
+          <input class="input" id="phoneInput" inputmode="numeric" placeholder="请输入手机号" />
+        </div>
+        <div class="field">
+          <label for="codeInput">验证码</label>
+          <input class="input" id="codeInput" inputmode="numeric" placeholder="输入任意 4 位数字即可继续" />
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn primary" id="continueBtn" type="button">继续并保存</button>
+        <button class="btn secondary" id="cancelBtn" type="button">返回上一页</button>
+      </div>
+      <div class="hint">正式接入时，这里会替换成真实手机号验证码登录。</div>
+    </section>
+  </div>
+
+  <script src="./assets/js/auth-flow.js"></script>
+  <script>
+    const { readStorage, writeStorage, resumePostAuthFlow, StorageKeys } = window.MindsLeapAuthFlow;
+    const phoneInput = document.getElementById('phoneInput');
+    const codeInput = document.getElementById('codeInput');
+    const continueBtn = document.getElementById('continueBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const registerMeta = document.getElementById('registerMeta');
+    const redirect = readStorage(StorageKeys.postAuthRedirect);
+    if (redirect?.action) {
+      registerMeta.innerHTML = `<div><strong>当前将会继续：</strong>${redirect.action}</div><div>登录后会自动回到刚才的页面与步骤。</div>`;
+    }
+    continueBtn.addEventListener('click', () => {
+      const phone = phoneInput.value.trim();
+      const code = codeInput.value.trim();
+      if (!phone || !code) {
+        alert('请输入手机号和验证码。');
+        return;
+      }
+      writeStorage(StorageKeys.auth, {
+        is_authenticated: true,
+        user_id: `demo_user_${phone.slice(-4) || '0001'}`,
+        phone,
+        updated_at: Date.now()
+      });
+      if (!resumePostAuthFlow()) {
+        window.location.href = './index.html';
+      }
+    });
+    cancelBtn.addEventListener('click', () => {
+      if (history.length > 1) history.back();
+      else window.location.href = './index.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>MindsLeap School · 学习地图</title>
+  <link rel="stylesheet" href="./assets/css/site-shell.css" />
+  <style>
+    .head{margin-top:14px;padding:24px;background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}
+    h1{margin:0 0 10px;color:var(--blue);font-size:34px}
+    .lead{font-size:15px;line-height:1.8;color:var(--muted)}
+    .head-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .head-meta span{display:inline-flex;padding:7px 10px;border-radius:999px;background:#F4F7FB;border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:700}
+    .section{margin-top:22px}
+    .section-head{margin-bottom:12px}
+    .section h3{font-size:22px}
+    .section p{margin:0;color:var(--muted);font-size:13px}
+    .modules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .module{padding:18px;border-radius:20px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);min-height:300px;display:flex;flex-direction:column;gap:10px}
+    .module .pill{display:inline-flex;padding:6px 9px;border-radius:999px;background:#EEF4FA;color:var(--muted);font-size:11px;font-weight:800}
+    .module .pill.foundation{background:rgba(156,17,59,.08);color:var(--red)}
+    .module .pill.strategy{background:rgba(30,71,124,.10);color:var(--blue)}
+    .module h4{margin:12px 0 8px;color:var(--blue);font-size:20px}
+    .module > p{
+      margin:0;color:var(--muted);font-size:13px;line-height:1.8;
+      min-height:calc(1.8em * 2);
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    .module-preview{display:grid;gap:8px;margin-top:2px;padding:12px;border-radius:16px;background:#F8FBFE;border:1px solid var(--border)}
+    .module-preview strong{font-size:12px;color:var(--blue)}
+    .module-preview ul{margin:0;padding-left:16px;color:var(--muted);font-size:12px;line-height:1.7}
+    .module-preview li{margin:0}
+    .module a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-size:13px;font-weight:800;color:#fff;background:var(--blue);padding:10px 14px;border-radius:12px;margin-top:auto;align-self:flex-start}
+    .coming{margin-top:16px;padding:18px;border-radius:20px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .coming strong{display:block;color:var(--blue);font-size:16px;margin-bottom:8px}
+    .coming p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+    .foot{margin-top:18px;padding:16px 18px;border-radius:18px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);font-size:13px;color:var(--muted);line-height:1.8}
+    /* 全局规则：卡片底部按钮不允许绝对定位覆盖正文，统一放在内容流末尾并用 margin-top:auto 顶到底部。 */
+    @media(max-width:900px){.modules{grid-template-columns:1fr}.head{padding:18px}h1{font-size:30px}}
+  </style>
+</head>
+<body class="site-map-page">
+  <div class="wrap">
+    <div class="page-top">
+      <div class="brand"><img class="brand-logo" src="./assets/img/MindsLeap-Logo-blue-260322.png" alt="MindsLeap" /><span class="brand-text">商学院</span></div>
+      <a class="back" href="./index.html">← 返回首页</a>
+    </div>
+
+    <section class="head">
+      <h1>学习地图</h1>
+      <div class="lead">这是 MindsLeap Business School 的学习地图。当前开放七个核心模块：AI时代商业认知、企业战略、财务与经营分析、营销与增长、AI时代领导力、运营与流程优化、创新与创业。后续会逐步开放完整课程体系。</div>
+      <div class="head-meta">
+        <span>当前开放 7 个模块</span>
+        <span>顺序学习版</span>
+        <span>底层已对齐完整课程体系</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h3>当前开放模块</h3>
+      </div>
+      <div class="modules" id="moduleList"></div>
+      <div class="coming" id="comingBox">
+        <strong>后续会逐步开放更多模块</strong>
+        <p id="comingCopy">完整课程体系已经写完并对齐到 120 节课。后续还会逐步加入数据、法律与 AI 实战等模块。</p>
+      </div>
+    </section>
+
+    <div class="foot">这一版地图的目标，不是一次展示所有复杂入口，而是让你先清楚看到：这是一套完整课程体系，而你现在可以直接从最核心的七个模块开始学习。</div>
+  </div>
+  <script>
+    const MODULE_META = {
+      'module-00-ai-foundation': {
+        pill: 'Foundation',
+        pillClass: 'foundation',
+        description: '先建立一个管理者理解 AI 的底层框架，再进入后面的经营与管理模块。',
+        href: './module-ai-foundation.html?entry=sequence'
+      },
+      'module-01-strategy': {
+        pill: 'Core Module',
+        pillClass: 'strategy',
+        description: '理解方向、取舍与长期竞争力，在 AI 时代重新理解战略。',
+        href: './module-strategy.html?entry=sequence'
+      },
+      'module-02-finance': {
+        pill: 'Finance',
+        pillClass: 'strategy',
+        description: '把财务数字重新变成经营判断，在 AI 时代建立更强的财务思维。',
+        href: './module-finance.html?entry=sequence'
+      },
+      'module-03-marketing': {
+        pill: 'Marketing',
+        pillClass: 'strategy',
+        description: '把零散营销动作重新整理成增长判断，在 AI 时代建立更清楚的市场与品牌框架。',
+        href: './module-marketing.html?entry=sequence'
+      },
+      'module-04-leadership': {
+        pill: 'Leadership',
+        pillClass: 'strategy',
+        description: '重新理解 AI 时代的人才标准、领导动作与组织升级路径，建立更稳的组织判断。',
+        href: './module-leadership.html?entry=sequence'
+      },
+      'module-05-operations': {
+        pill: 'Operations',
+        pillClass: 'strategy',
+        description: '把零散执行动作整理成运营系统，在 AI 时代提升效率、质量与交付能力。',
+        href: './module-operations.html?entry=sequence'
+      },
+      'module-06-innovation': {
+        pill: 'Innovation',
+        pillClass: 'strategy',
+        description: '把创新从灵感和口号，整理成可验证、可复盘、可放大的创业与实验系统。',
+        href: './module-innovation.html?entry=sequence'
+      }
+    };
+
+    function renderModule(module, lessons) {
+      const meta = MODULE_META[module.module_slug];
+      if (!meta) return '';
+      const lessonItems = lessons.slice(0, 6).map(lesson => `<li>${lesson.title}</li>`).join('');
+      return `
+        <article class="module">
+          <div class="pill ${meta.pillClass || ''}">${meta.pill}</div>
+          <h4>${module.module_title}</h4>
+          <p>${meta.description}</p>
+          <div class="module-preview">
+            <strong>课程内容</strong>
+            <ul>${lessonItems}</ul>
+          </div>
+          <a href="${meta.href}">进入模块</a>
+        </article>
+      `;
+    }
+
+    async function initMap() {
+      const res = await fetch('./assets/data/course-manifest.json');
+      const data = await res.json();
+      const openModules = data.modules.filter(module => MODULE_META[module.module_slug]);
+      const list = document.getElementById('moduleList');
+      list.innerHTML = openModules.map(module => {
+        const lessons = data.lessons.filter(lesson => lesson.module_slug === module.module_slug);
+        return renderModule(module, lessons);
+      }).join('');
+
+      const comingCount = data.module_count - openModules.length;
+      const comingLessons = data.lesson_count - openModules.reduce((sum, module) => sum + module.lesson_count, 0);
+      const comingCopy = document.getElementById('comingCopy');
+      comingCopy.textContent = `完整课程体系已经写完并对齐到 ${data.lesson_count} 节课。后续还会逐步开放另外 ${comingCount} 个模块、约 ${comingLessons} 节课程。`;
+    }
+
+    initMap().catch(() => {
+      document.getElementById('moduleList').innerHTML = `
+        <article class="module">
+          <div class="pill foundation">Foundation</div>
+          <h4>AI时代商业认知</h4>
+          <p>先建立一个管理者理解 AI 的底层框架，再进入后面的经营与管理模块。</p>
+          <div class="module-preview"><strong>课程内容</strong><ul><li>AI 到底是什么？管理者的第一课</li><li>大模型到底改变了什么？从 GPT 到 Agent 的进化</li></ul></div>
+          <a href="./module-ai-foundation.html?entry=sequence">进入模块</a>
+        </article>
+        <article class="module">
+          <div class="pill strategy">Core Module</div>
+          <h4>企业战略</h4>
+          <p>理解方向、取舍与长期竞争力，在 AI 时代重新理解战略。</p>
+          <div class="module-preview"><strong>课程内容</strong><ul><li>什么是战略？为什么大多数公司其实没有战略</li><li>波特五力模型：看懂你的行业竞争格局</li></ul></div>
+          <a href="./module-strategy.html?entry=sequence">进入模块</a>
+        </article>
+      `;
+    });
+  </script>
+</body>
+</html>

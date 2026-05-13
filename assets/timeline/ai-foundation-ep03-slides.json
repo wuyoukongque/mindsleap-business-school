@@ -1,0 +1,47 @@
+[
+  {
+    "file": "ai-foundation-ep03/slide_01_title.png",
+    "label": "标题页",
+    "caption": "这一节的重点，是建立一个理性的 AI 任务评估矩阵。"
+  },
+  {
+    "file": "ai-foundation-ep03/slide_02_two_extremes.png",
+    "label": "两种极端",
+    "caption": "管理者最容易掉进两个极端：AI恐慌派和AI无视派。"
+  },
+  {
+    "file": "ai-foundation-ep03/slide_03_two_axes.png",
+    "label": "两个维度",
+    "caption": "判断一个任务适不适合 AI，先看结构化程度和上下文类型。"
+  },
+  {
+    "file": "ai-foundation-ep03/slide_04_sweet_spot.png",
+    "label": "甜蜜区",
+    "caption": "高结构化加通用上下文，是 AI 的甜蜜区。"
+  },
+  {
+    "file": "ai-foundation-ep03/slide_05_ai_plus_data.png",
+    "label": "AI加数据",
+    "caption": "高结构化加私有上下文，不是 AI 没用，而是要先把数据接好。"
+  },
+  {
+    "file": "ai-foundation-ep03/slide_06_human_core.png",
+    "label": "人的核心领地",
+    "caption": "低结构化任务里，AI 更适合辅助，真正的决策仍然属于人。"
+  },
+  {
+    "file": "ai-foundation-ep03/slide_07_business_review.png",
+    "label": "真实业务场景",
+    "caption": "一个季度业务复盘，会同时分布在四个象限里。"
+  },
+  {
+    "file": "ai-foundation-ep03/slide_08_traps.png",
+    "label": "三个陷阱",
+    "caption": "过度信任、低估进化速度、忽视数据安全，是最常见的三个坑。"
+  },
+  {
+    "file": "ai-foundation-ep03/slide_09_summary.png",
+    "label": "总结页",
+    "caption": "真正重要的，是用 AI 释放低价值时间，把精力集中到高价值判断。"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {"file":"ai-foundation-ep05/slide_01.png","label":"标题页","caption":"这一节的重点，是把 Prompt 从技巧升级成结构化表达能力。"},
+  {"file":"ai-foundation-ep05/slide_02.png","label":"问题不在AI","caption":"很多时候不是 AI 不行，而是你的需求表达得还不够清楚。"},
+  {"file":"ai-foundation-ep05/slide_03.png","label":"CRISP框架","caption":"每次跟 AI 协作前，把背景、角色、指令、具体要求和目的想清楚。"},
+  {"file":"ai-foundation-ep05/slide_04.png","label":"好坏Prompt对比","caption":"同样是写市场分析，结构化 Prompt 和模糊 Prompt 的结果会差很多。"},
+  {"file":"ai-foundation-ep05/slide_05.png","label":"五个进阶技巧","caption":"给范例、分步骤、迭代优化，会让 AI 协作效率大幅提升。"},
+  {"file":"ai-foundation-ep05/slide_06.png","label":"让AI挑战你","caption":"别只让 AI 顺着你，也要让它帮你找漏洞、做压力测试。"},
+  {"file":"ai-foundation-ep05/slide_07.png","label":"本质能力","caption":"Prompt 思维本质上是在训练结构化表达和需求定义能力。"},
+  {"file":"ai-foundation-ep05/slide_08.png","label":"今天就能开始","caption":"从高频任务开始建立自己的 Prompt 模板库，最容易快速见效。"},
+  {"file":"ai-foundation-ep05/slide_09.png","label":"总结页","caption":"Prompt 的质量，直接决定你从 AI 身上拿到的价值。"}
+]

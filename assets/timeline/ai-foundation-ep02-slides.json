@@ -1,0 +1,47 @@
+[
+  {
+    "file": "ai-foundation-ep02/slide_01_title.png",
+    "label": "标题页",
+    "caption": "大模型让 AI 从专用能力走向通用能力，真正带来了这一轮质变。"
+  },
+  {
+    "file": "ai-foundation-ep02/slide_02_special_to_general.png",
+    "label": "专用到通用",
+    "caption": "在大模型之前，AI 更像一个任务一个模型；大模型之后，AI 开始变成通用能力。"
+  },
+  {
+    "file": "ai-foundation-ep02/slide_03_barrier_drop.png",
+    "label": "门槛下降",
+    "caption": "大模型带来的第一个商业变化，是 AI 的使用门槛被大幅拉低。"
+  },
+  {
+    "file": "ai-foundation-ep02/slide_04_language_programming.png",
+    "label": "自然语言编程",
+    "caption": "自然语言正在变成新的编程语言，表达需求的能力会直接变成生产力。"
+  },
+  {
+    "file": "ai-foundation-ep02/slide_05_tool_to_colleague.png",
+    "label": "工具到同事",
+    "caption": "今天的 AI 不再只是工具，而开始更像一个会沟通的同事。"
+  },
+  {
+    "file": "ai-foundation-ep02/slide_06_agent.png",
+    "label": "Agent",
+    "caption": "Agent 代表 AI 的下一个阶段：从被动回答，走向主动执行。"
+  },
+  {
+    "file": "ai-foundation-ep02/slide_07_timeline.png",
+    "label": "演化时间线",
+    "caption": "规则、机器学习、大模型和 Agent 时代，是叠加关系，不是替代关系。"
+  },
+  {
+    "file": "ai-foundation-ep02/slide_08_multimodal.png",
+    "label": "多模态",
+    "caption": "AI 正在从只懂文字，走向同时看图、听音频、处理多种信息。"
+  },
+  {
+    "file": "ai-foundation-ep02/slide_09_summary.png",
+    "label": "总结页",
+    "caption": "管理者真正需要理解的，是大模型和 Agent 对商业的实际意义。"
+  }
+]

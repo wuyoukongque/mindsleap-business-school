@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>MindsLeap · AI 点评与建议</title>
+  <style>
+    :root{--blue:#1E477C;--red:#9C113B;--text:#12263F;--muted:#667A96;--border:#DCE6F0;--soft:#F7FAFE;--shadow:0 14px 34px rgba(18,38,63,.08)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#F8FBFE 0%,#EEF4F8 100%);color:var(--text)}
+    .wrap{width:min(900px,100%);margin:0 auto;padding:20px 16px 40px}
+    .back{color:var(--blue);text-decoration:none;font-weight:800;font-size:13px}
+    .hero,.panel,.bottom{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}
+    .hero{padding:24px}
+    .eyebrow{display:inline-flex;padding:8px 12px;border-radius:999px;background:#EEF4FA;color:var(--blue);font-size:12px;font-weight:800}
+    h1{margin:14px 0 10px;color:var(--blue);font-size:clamp(28px,4vw,38px);line-height:1.15}
+    .sub{color:var(--muted);font-size:14px;line-height:1.8;max-width:760px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .meta span{display:inline-flex;padding:7px 10px;border-radius:999px;background:#F7FAFE;border:1px solid var(--border);font-size:12px;color:var(--muted);font-weight:700}
+    .panel{padding:18px}
+    .panel h2{margin:0 0 10px;color:var(--blue);font-size:18px;display:flex;align-items:center;gap:10px}
+    .panel h2::before{content:"";width:10px;height:10px;border-radius:999px;background:var(--red)}
+    .hint{margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.75}
+    .bubble{padding:16px;border-radius:18px;line-height:1.9;font-size:14px}
+    .bubble.ai{background:#F6FAFE;border:1px solid #E4EDF6;color:#31465F}
+    .bubble.result{background:#17345D;border:1px solid #28476F;color:#EEF4FF}
+    .list{display:grid;gap:10px;margin-top:12px}
+    .item{padding:14px;border-radius:16px;background:var(--soft);border:1px solid var(--border)}
+    .item strong{display:block;color:var(--blue);font-size:14px;margin-bottom:6px}
+    .item p{margin:0;color:#37506E;font-size:14px;line-height:1.8}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border-radius:999px;background:#fff;border:1px solid var(--border);color:var(--blue);font-size:12px;font-weight:800;cursor:pointer}
+    .bottom{padding:18px}
+    .bottom strong{display:block;color:var(--blue);font-size:16px}
+    .bottom span{display:block;margin-top:6px;color:var(--muted);font-size:13px;line-height:1.75}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:14px;text-decoration:none;font-weight:800;font-size:14px;border:0;cursor:pointer}
+    .primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(18,38,63,.14)}
+    .secondary{background:#fff;color:var(--blue);border:1px solid var(--border)}
+    @media (max-width:760px){.actions{flex-direction:column}.actions .btn,.actions a{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" id="backLink" href="./index.html">← 返回课程</a>
+
+    <section class="hero">
+      <div class="eyebrow">AI 点评与整理</div>
+      <h1 id="pageTitle">我先基于你的回答，给你一个当前情况下的初步建议</h1>
+      <div class="sub" id="pageSub">这一步不追求一步到位，而是先基于你现在提供的信息，给你一个有参考价值的判断与建议。</div>
+      <div class="meta">
+        <span id="lessonMeta">来源课程：当前课程</span>
+        <span id="modeMeta">当前模式：AI 第一轮点评</span>
+        <span id="statusMeta">下一步：生成思考卡或继续打磨</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>AI 先点评一下你的回答</h2>
+      <p class="hint">先接住你现在这轮回答，不急着上结论。</p>
+      <div class="bubble ai" id="evaluationBox">我先看看你刚才这轮回答里，哪些已经比较清楚，哪些还值得继续补充。</div>
+    </section>
+
+    <section class="panel">
+      <h2>根据您目前的情况，您可以优先考虑这些方向</h2>
+      <p class="hint">这不是最终结论，而是基于你现在提供的信息，先给出一版更有参考价值的整理结果。</p>
+      <div class="bubble result" id="summaryBox">我会先把你的回答收束成一个更清楚的判断。</div>
+      <div class="list">
+        <div class="item"><strong>当前机会判断</strong><p id="opportunityBox">—</p></div>
+        <div class="item"><strong>关键投入</strong><p id="resourcesBox">—</p></div>
+        <div class="item"><strong>与长期方向的关系</strong><p id="alignmentBox">—</p></div>
+        <div class="item"><strong>当前最值得先做的事</strong><p id="actionBox">—</p></div>
+        <div class="item"><strong>你还可以考虑</strong><p id="actionBox2">—</p></div>
+        <div class="item"><strong>如果要先迈出一步</strong><p id="actionBox3">—</p></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>如果你愿意说得更具体，我可以继续帮你判断</h2>
+      <p class="hint">你可以继续补充这些细节。补得越具体，我给你的建议就越有针对性。</p>
+      <div class="chips" id="courseChips"></div>
+    </section>
+
+    <section class="bottom">
+      <strong id="bottomTitle">你想怎么继续？</strong>
+      <span id="bottomCopy">如果这版建议已经帮你理清了一些思路，你可以先沉淀成思考卡；如果你愿意告诉我更多业务细节，我可以继续给你更有价值的建议。</span>
+      <div class="actions">
+        <a class="btn primary" id="confirmCardBtn" href="./thought-card-sheet.html">这版可以，生成思考卡</a>
+        <a class="btn secondary" id="continueCoachBtn" href="./ai-coach.html">继续和 AI 教练聊</a>
+      </div>
+    </section>
+  </div>
+
+  <script src="./assets/js/auth-flow.js"></script>
+  <script>
+    (function(){
+      const { readStorage, writeStorage, requireAuth, StorageKeys } = window.MindsLeapAuthFlow;
+      const API_BASE = window.location.port === '8013' ? '' : 'http://127.0.0.1:8013';
+      const params = new URLSearchParams(window.location.search);
+      const source = params.get('source') || '';
+      const localDraft = readJson(localStorage.getItem('mindsleap_thought_card_draft'), {});
+      const cachedAi = readJson(localStorage.getItem('mindsleap_thought_card_ai_result'), null);
+      const guestDraft = readStorage(StorageKeys.guestReflectionDraft, {});
+      const guestPath = readStorage(StorageKeys.guestPath, {});
+      let latestCard = null;
+
+      function readJson(raw, fallback=null){ if(!raw) return fallback; try{return JSON.parse(raw)}catch(e){return fallback} }
+      function lessonLabel(){ return localDraft?.lesson || guestDraft?.lesson_title || guestDraft?.lesson_id || source || '当前课程'; }
+      function backHref(){ return source ? `./${source}.html?entry=sequence` : './index.html'; }
+      function answers(){
+        const a = guestDraft?.answers || {};
+        return {
+          q1: a.q1 || localDraft?.opportunity || '',
+          q2: a.q2 || localDraft?.resources || '',
+          q3: a.q3 || localDraft?.alignment || '',
+          notes: guestDraft?.notes || localDraft?.notes || ''
+        };
+      }
+      function lessonPrompts(card){
+        const title = lessonLabel();
+        if (title.includes('什么是 AI') || source.includes('ai-foundation-01')) {
+          return [
+            '你现在理解的 AI，在你的企业里更像工具、能力，还是新的经营方式？为什么？',
+            '如果只先选一个最小场景试 AI，你会先放在哪个环节？',
+            '这节课之后，你觉得自己过去对 AI 的哪个判断需要被修正？'
+          ];
+        }
+        if (title.includes('战略')) {
+          return [
+            '如果真正要做取舍，你今年最应该明确不做的是什么？',
+            '你现在最想抓的机会，和长期方向之间到底是什么关系？',
+            '如果今年只能做三件事，这件事会排在第几位？为什么？'
+          ];
+        }
+        return card.mode === 'clarify'
+          ? (card.clarification_questions || []).slice(0,3)
+          : (card.coach_prompts || []).slice(0,3);
+      }
+      function fallbackCard(){
+        const a = answers();
+        const brief = !a.q1 || !a.q2 || !a.q3 || [a.q1,a.q2,a.q3].filter(Boolean).join('').length < 42;
+        return {
+          mode: brief ? 'clarify' : 'review',
+          evaluation: brief
+            ? '你已经给出了一个方向，但目前信息还比较少。我建议先把问题、投入和长期关系再说具体一点，这样整理出来的结果才更有价值。'
+            : '你的回答已经有方向感了，不是完全泛泛而谈。接下来最值得继续加强的是：把优先级、资源边界和验证标准说得更具体。',
+          summary: a.q1 ? `目前看，你真正想推进的重点是：${a.q1}。但在决定怎么做之前，还需要把投入与判断边界说得更清楚。` : '目前信息还不够完整，所以我先不给你太重的结论，而是先帮你把下一步最值得补充的问题指出来。',
+          opportunity: a.q1 || '先把你现在真正想推进的问题说清楚。',
+          resources: a.q2 || '先明确你最愿意先投入的资源：预算、团队时间，还是你自己的注意力。',
+          alignment: a.q3 || '再判断这件事和长期方向的关系，以及为了聚焦要少做什么。',
+          action_suggestions: brief
+            ? ['先补一句：你现在最想解决的，到底是哪一个具体问题？','再补一句：如果只能先投入一种资源，你愿意投入什么？','最后再补一句：这件事和你的长期方向是什么关系？']
+            : ['先把这件事改写成一句更具体的目标。','把真正愿意投入的资源写清楚。','找一个最近 2-4 周内可以先验证的小动作。'],
+          clarification_questions: ['你现在最想解决的，到底是哪一个具体问题？','如果只能先投入一种资源，你愿意投入什么？','这件事和你的长期方向是什么关系？'],
+          coach_prompts: ['我想把这个问题再说具体一点。','我想继续打磨我的判断。','我想把这件事和长期方向的关系聊清楚。']
+        };
+      }
+      function renderPrompts(prompts){
+        const wrap = document.getElementById('courseChips');
+        wrap.innerHTML = '';
+        (prompts || []).slice(0,3).forEach(prompt => {
+          const btn = document.createElement('button');
+          btn.className = 'chip';
+          btn.type = 'button';
+          btn.textContent = prompt;
+          btn.addEventListener('click', () => jumpToCoach(prompt));
+          wrap.appendChild(btn);
+        });
+      }
+      function jumpToCoach(prompt){
+        writeStorage(StorageKeys.guestCoachDraft, {
+          lesson_id: guestDraft?.lesson_id || source || 'lesson',
+          lesson_title: lessonLabel(),
+          first_message: prompt,
+          updated_at: Date.now()
+        });
+        window.location.href = './ai-coach.html?source=thought-review';
+      }
+      function render(card, meta={}){
+        latestCard = card;
+        document.getElementById('lessonMeta').textContent = `来源课程：${lessonLabel()}`;
+        document.getElementById('modeMeta').textContent = card.mode === 'clarify' ? '当前模式：先补充一点信息' : '当前模式：AI 第一轮点评';
+        document.getElementById('statusMeta').textContent = card.mode === 'clarify' ? '下一步：先补充，再继续整理' : '下一步：生成思考卡或继续打磨';
+        document.getElementById('evaluationBox').textContent = card.evaluation || '';
+        document.getElementById('summaryBox').textContent = card.summary || '';
+        document.getElementById('opportunityBox').textContent = card.opportunity || '—';
+        document.getElementById('resourcesBox').textContent = card.resources || '—';
+        document.getElementById('alignmentBox').textContent = card.alignment || '—';
+        const suggestions = card.action_suggestions || [];
+        document.getElementById('actionBox').textContent = suggestions[0] || '先把这件事继续说具体一点。';
+        document.getElementById('actionBox2').textContent = suggestions[1] || '再补充一点资源、目标或场景信息，我会更容易给出有价值的建议。';
+        document.getElementById('actionBox3').textContent = suggestions[2] || '先从一个更小、更容易验证的动作开始。';
+        renderPrompts(lessonPrompts(card));
+
+        const isClarify = card.mode === 'clarify';
+        document.getElementById('confirmCardBtn').textContent = isClarify ? '先补充一点信息' : '这版可以，生成思考卡';
+        document.getElementById('continueCoachBtn').textContent = isClarify ? '直接和 AI 教练补充' : '继续和 AI 教练聊';
+        document.getElementById('bottomCopy').textContent = isClarify
+          ? '现在更重要的不是立刻沉淀成卡，而是先把关键问题再补具体一点。'
+          : '如果这版建议已经帮你理清了一些思路，你可以先沉淀成思考卡；如果你愿意告诉我更多业务细节，我可以继续给你更有价值的建议。';
+      }
+      async function requestThoughtCard(){
+        const a = guestDraft?.answers || {};
+        const resp = await fetch(`${API_BASE}/api/thought-card`, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            lessonId: guestDraft?.lesson_id || source || 'lesson',
+            lessonTitle: lessonLabel(),
+            pathSummary: guestPath?.goal || guestPath?.reason || '',
+            answers: a,
+            notes: guestDraft?.notes || localDraft?.notes || ''
+          })
+        });
+        if(!resp.ok) throw new Error(`request failed: ${resp.status}`);
+        return resp.json();
+      }
+      function persist(card, meta={}){
+        localStorage.setItem('mindsleap_thought_card_ai_result', JSON.stringify({ card, meta, updated_at: Date.now() }));
+        writeStorage(StorageKeys.guestReflectionDraft, { ...(guestDraft || {}), lesson_title: lessonLabel(), ai_card: card, ai_meta: meta, summary: card.summary, updated_at: Date.now() });
+      }
+      async function generate(){
+        const seed = cachedAi?.card || guestDraft?.ai_card || fallbackCard();
+        render(seed, cachedAi?.meta || guestDraft?.ai_meta || { fallback:true });
+        const hasInput = Object.values(guestDraft?.answers || {}).some(Boolean) || localDraft?.opportunity || localDraft?.resources || localDraft?.alignment;
+        if(!hasInput) return;
+        try {
+          const json = await requestThoughtCard();
+          render(json.data, json.meta || {});
+          persist(json.data, json.meta || {});
+        } catch (e) {
+          render(seed, { fallback:true });
+        }
+      }
+
+      document.getElementById('backLink').href = backHref();
+      generate();
+
+      document.getElementById('confirmCardBtn').addEventListener('click', e => {
+        if (latestCard?.mode === 'clarify') {
+          e.preventDefault();
+          jumpToCoach((latestCard?.clarification_questions || [])[0] || '我想先补充一点信息。');
+          return;
+        }
+        const allowed = requireAuth('generate_thought_card', { source:'thought_review' }, { type:'thought_card', url:'./thought-card-sheet.html?source=thought-review' });
+        if(!allowed.allowed) e.preventDefault();
+      });
+      document.getElementById('continueCoachBtn').addEventListener('click', e => {
+        const prompt = latestCard?.mode === 'clarify'
+          ? ((latestCard?.clarification_questions || [])[0] || '我想先补充一点信息。')
+          : ((lessonPrompts(latestCard) || [])[0] || '我想继续把这个问题想清楚。');
+        writeStorage(StorageKeys.guestCoachDraft, {
+          lesson_id: guestDraft?.lesson_id || source || 'lesson',
+          lesson_title: lessonLabel(),
+          first_message: prompt,
+          updated_at: Date.now()
+        });
+        const allowed = requireAuth('open_coach', { source:'thought_review' }, { type:'thought_card', url:'./ai-coach.html?source=thought-review' });
+        if(!allowed.allowed) e.preventDefault();
+      });
+    })();
+  </script>
+</body>
+</html>
