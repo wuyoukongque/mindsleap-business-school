@@ -32,6 +32,7 @@ assets/audio/*
 !assets/audio/ai-foundation-ep05-prompt-thinking.mp3
 !assets/audio/ai-foundation-ep06-personal-competitiveness.mp3
 !assets/audio/ep01.mp3
+!assets/audio/data-*.mp3
 !assets/audio/finance-*.mp3
 !assets/audio/innovation-*.mp3
 !assets/audio/leadership-*.mp3
@@ -59,6 +60,7 @@ PROJECT_CONTEXT.md
 assets/slides/**/preview-sheet.jpg
 assets/subtitles/*.vtt
 !assets/subtitles/*-fixed.vtt
+!assets/subtitles/data-*.vtt
 !assets/subtitles/finance-*.vtt
 !assets/subtitles/innovation-*.vtt
 !assets/subtitles/leadership-*.vtt
