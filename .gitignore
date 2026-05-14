@@ -36,6 +36,7 @@ assets/audio/*
 !assets/audio/finance-*.mp3
 !assets/audio/innovation-*.mp3
 !assets/audio/leadership-*.mp3
+!assets/audio/legal-*.mp3
 !assets/audio/marketing-*.mp3
 !assets/audio/operations-*.mp3
 !assets/audio/strategy-ep*.mp3
@@ -64,6 +65,7 @@ assets/subtitles/*.vtt
 !assets/subtitles/finance-*.vtt
 !assets/subtitles/innovation-*.vtt
 !assets/subtitles/leadership-*.vtt
+!assets/subtitles/legal-*.vtt
 !assets/subtitles/marketing-*.vtt
 !assets/subtitles/operations-*.vtt
 !assets/subtitles/strategy-ep*-v2.vtt
