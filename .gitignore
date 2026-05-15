@@ -40,6 +40,7 @@ assets/audio/*
 !assets/audio/marketing-*.mp3
 !assets/audio/operations-*.mp3
 !assets/audio/strategy-ep*.mp3
+!assets/audio/workshop-*.mp3
 assets/audio/strategy-ep02-five-forces.mp3
 assets/audio/backups/
 assets/slides/*preview*
@@ -68,6 +69,7 @@ assets/subtitles/*.vtt
 !assets/subtitles/legal-*.vtt
 !assets/subtitles/marketing-*.vtt
 !assets/subtitles/operations-*.vtt
+!assets/subtitles/workshop-*.vtt
 !assets/subtitles/strategy-ep*-v2.vtt
 !assets/subtitles/strategy-ep03-*.vtt
 !assets/subtitles/strategy-ep04-*.vtt
